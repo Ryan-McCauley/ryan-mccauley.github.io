@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/main.5506a31a.css","mappings":"AAAA,EACE,qBAAsB,CAGtB,+BAAmC,CAFnC,QAAS,CACT,SAEF","sources":["App.css"],"sourcesContent":["*{\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n  font-family: 'fira code', monospace;\n}"],"names":[],"ignoreList":[],"sourceRoot":""}
