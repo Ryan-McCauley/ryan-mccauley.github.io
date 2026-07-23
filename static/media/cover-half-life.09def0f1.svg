@@ -1,0 +1,62 @@
+<svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Caffeine decay curve">
+  <defs>
+    <radialGradient id="hlBg" cx="50%" cy="44%" r="75%">
+      <stop offset="0%" stop-color="#1c1408"/>
+      <stop offset="55%" stop-color="#0d0a04"/>
+      <stop offset="100%" stop-color="#060402"/>
+    </radialGradient>
+    <linearGradient id="hlAmber" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffd58a"/>
+      <stop offset="100%" stop-color="#ff9f45"/>
+    </linearGradient>
+    <linearGradient id="hlCurve" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ffe3ad"/>
+      <stop offset="60%" stop-color="#ffb15c"/>
+      <stop offset="100%" stop-color="#7a4a1e"/>
+    </linearGradient>
+    <filter id="hlGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="7" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="600" height="600" fill="url(#hlBg)"/>
+
+  <g stroke="#3a2a14" stroke-width="1" opacity="0.5">
+    <path d="M0 100H600M0 200H600M0 300H600M0 400H600M0 500H600"/>
+    <path d="M100 0V600M200 0V600M300 0V600M400 0V600M500 0V600"/>
+  </g>
+
+  <!-- watch face -->
+  <g transform="translate(300,300)" filter="url(#hlGlow)">
+    <circle r="150" fill="#160f06" stroke="url(#hlAmber)" stroke-width="3"/>
+    <circle r="128" fill="none" stroke="#3a2a14" stroke-width="1"/>
+    <g stroke="#513c1e" stroke-width="2">
+      <line x1="0" y1="-128" x2="0" y2="-114"/>
+      <line x1="0" y1="128" x2="0" y2="114"/>
+      <line x1="-128" y1="0" x2="-114" y2="0"/>
+      <line x1="128" y1="0" x2="114" y2="0"/>
+    </g>
+    <!-- decay curve across the face -->
+    <path d="M-110 -20 C -60 -95, -10 -95, 10 -60 C 40 -8, 70 40, 110 70"
+          fill="none" stroke="url(#hlCurve)" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="10" cy="-60" r="7" fill="url(#hlAmber)"/>
+    <!-- sleep-cutoff marker -->
+    <line x1="70" y1="-128" x2="70" y2="128" stroke="#ff6b8a" stroke-width="1.5" stroke-dasharray="6 6" opacity="0.7"/>
+    <text x="0" y="6" font-family="Menlo,monospace" font-size="30" fill="url(#hlAmber)" text-anchor="middle" font-weight="700">mg</text>
+  </g>
+
+  <!-- widget tiles -->
+  <g transform="translate(88,108)">
+    <rect x="0" y="0" width="104" height="76" rx="8" fill="#160f06" stroke="#3a2a14"/>
+    <text x="52" y="46" font-family="Menlo,monospace" font-size="30" fill="url(#hlAmber)" text-anchor="middle" font-weight="700">62</text>
+    <text x="52" y="64" font-family="Menlo,monospace" font-size="11" fill="#a8895a" text-anchor="middle">mg active</text>
+  </g>
+  <g transform="translate(408,410)">
+    <rect x="0" y="0" width="104" height="76" rx="8" fill="#160f06" stroke="#3a2a14"/>
+    <path d="M14 56 L34 30 L54 42 L74 18 L94 34" fill="none" stroke="url(#hlCurve)" stroke-width="3"/>
+  </g>
+
+  <rect x="60" y="548" width="140" height="6" rx="3" fill="url(#hlAmber)"/>
+  <rect x="212" y="548" width="70" height="6" rx="3" fill="#3a2a14"/>
+</svg>

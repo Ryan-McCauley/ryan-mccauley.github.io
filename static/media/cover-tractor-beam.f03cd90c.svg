@@ -1,0 +1,66 @@
+<svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Tractor Beam watching deleted posts">
+  <defs>
+    <radialGradient id="tbBg" cx="50%" cy="30%" r="85%">
+      <stop offset="0%" stop-color="#0a1c1a"/>
+      <stop offset="55%" stop-color="#04100e"/>
+      <stop offset="100%" stop-color="#010605"/>
+    </radialGradient>
+    <linearGradient id="tbGreen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#a8ffcf"/>
+      <stop offset="100%" stop-color="#49f4b0"/>
+    </linearGradient>
+    <linearGradient id="tbBeam" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7ef0a0" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#7ef0a0" stop-opacity="0.02"/>
+    </linearGradient>
+    <filter id="tbGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="7" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="600" height="600" fill="url(#tbBg)"/>
+
+  <g stroke="#123a30" stroke-width="1" opacity="0.5">
+    <path d="M0 100H600M0 200H600M0 300H600M0 400H600M0 500H600"/>
+    <path d="M100 0V600M200 0V600M300 0V600M400 0V600M500 0V600"/>
+  </g>
+
+  <!-- saucer -->
+  <g transform="translate(300,150)" filter="url(#tbGlow)">
+    <ellipse cx="0" cy="0" rx="120" ry="30" fill="none" stroke="url(#tbGreen)" stroke-width="3"/>
+    <ellipse cx="0" cy="0" rx="76" ry="19" fill="none" stroke="url(#tbGreen)" stroke-width="2" opacity="0.6"/>
+    <ellipse cx="0" cy="-14" rx="46" ry="18" fill="#0d2620" stroke="url(#tbGreen)" stroke-width="2"/>
+  </g>
+
+  <!-- tractor beam sweeping down onto a document -->
+  <polygon points="240,168 360,168 430,430 170,430" fill="url(#tbBeam)"/>
+
+  <!-- a post caught mid-beam, half faded (being deleted) -->
+  <g transform="translate(300,340)">
+    <rect x="-90" y="-70" width="180" height="140" rx="10" fill="#0d2620" stroke="url(#tbGreen)" stroke-width="2"/>
+    <g stroke="#2a6b58" stroke-width="6" stroke-linecap="round">
+      <line x1="-64" y1="-38" x2="40" y2="-38"/>
+      <line x1="-64" y1="-14" x2="64" y2="-14" opacity="0.6"/>
+      <line x1="-64" y1="10" x2="20" y2="10" opacity="0.3"/>
+    </g>
+    <!-- strike-through marks where content vanished -->
+    <line x1="-64" y1="-14" x2="64" y2="-14" stroke="#ff6b8a" stroke-width="2"/>
+    <line x1="-64" y1="10" x2="20" y2="10" stroke="#ff6b8a" stroke-width="2" opacity="0.7"/>
+  </g>
+
+  <!-- radar ping tiles -->
+  <g transform="translate(88,410)">
+    <rect x="0" y="0" width="104" height="76" rx="8" fill="#0d2620" stroke="#123a30"/>
+    <circle cx="52" cy="38" r="4" fill="url(#tbGreen)"/>
+    <circle cx="52" cy="38" r="16" fill="none" stroke="url(#tbGreen)" stroke-width="1.5" opacity="0.6"/>
+    <circle cx="52" cy="38" r="28" fill="none" stroke="url(#tbGreen)" stroke-width="1" opacity="0.3"/>
+  </g>
+  <g transform="translate(408,410)">
+    <rect x="0" y="0" width="104" height="76" rx="8" fill="#0d2620" stroke="#123a30"/>
+    <text x="52" y="48" font-family="Menlo,monospace" font-size="13" fill="url(#tbGreen)" text-anchor="middle">r/UFO</text>
+  </g>
+
+  <rect x="60" y="548" width="140" height="6" rx="3" fill="url(#tbGreen)"/>
+  <rect x="212" y="548" width="70" height="6" rx="3" fill="#123a30"/>
+</svg>

@@ -1,0 +1,94 @@
+<svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Homunculus cockpit">
+  <defs>
+    <radialGradient id="hmBg" cx="50%" cy="42%" r="75%">
+      <stop offset="0%" stop-color="#0a1c22"/>
+      <stop offset="55%" stop-color="#040d11"/>
+      <stop offset="100%" stop-color="#010606"/>
+    </radialGradient>
+    <linearGradient id="hmCyan" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#92e4ef"/>
+      <stop offset="100%" stop-color="#49e0f4"/>
+    </linearGradient>
+    <linearGradient id="hmViolet" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#a78bfa"/>
+      <stop offset="100%" stop-color="#6d5cf5"/>
+    </linearGradient>
+    <filter id="hmGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="7" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="600" height="600" fill="url(#hmBg)"/>
+
+  <!-- grid backdrop -->
+  <g stroke="#123038" stroke-width="1" opacity="0.5">
+    <path d="M0 100H600M0 200H600M0 300H600M0 400H600M0 500H600"/>
+    <path d="M100 0V600M200 0V600M300 0V600M400 0V600M500 0V600"/>
+  </g>
+
+  <!-- radiating circuit lines from core -->
+  <g stroke="url(#hmCyan)" stroke-width="2" fill="none" opacity="0.55">
+    <path d="M300 300 L150 150 L110 150"/>
+    <path d="M300 300 L450 150 L490 150"/>
+    <path d="M300 300 L150 450 L110 450"/>
+    <path d="M300 300 L450 450 L490 450"/>
+    <path d="M300 300 L300 120"/>
+    <path d="M300 300 L300 480"/>
+  </g>
+  <g fill="url(#hmCyan)">
+    <circle cx="110" cy="150" r="4"/><circle cx="490" cy="150" r="4"/>
+    <circle cx="110" cy="450" r="4"/><circle cx="490" cy="450" r="4"/>
+    <circle cx="300" cy="120" r="4"/><circle cx="300" cy="480" r="4"/>
+  </g>
+
+  <!-- capability panel: candlesticks (top-left) -->
+  <g transform="translate(88,108)">
+    <rect x="0" y="0" width="104" height="76" rx="8" fill="#0c2027" stroke="#1c3d45"/>
+    <g stroke-width="6">
+      <line x1="20" y1="18" x2="20" y2="58" stroke="#49e0f4"/><rect x="15" y="30" width="10" height="20" fill="#49e0f4"/>
+      <line x1="40" y1="24" x2="40" y2="62" stroke="#7ef0a0"/><rect x="35" y="34" width="10" height="16" fill="#7ef0a0"/>
+      <line x1="60" y1="14" x2="60" y2="54" stroke="#49e0f4"/><rect x="55" y="22" width="10" height="24" fill="#49e0f4"/>
+      <line x1="80" y1="20" x2="80" y2="66" stroke="#ff6b8a"/><rect x="75" y="42" width="10" height="14" fill="#ff6b8a"/>
+    </g>
+  </g>
+
+  <!-- capability panel: radar / surveil (top-right) -->
+  <g transform="translate(410,146)">
+    <circle cx="0" cy="0" r="46" fill="#0c2027" stroke="#1c3d45"/>
+    <circle cx="0" cy="0" r="30" fill="none" stroke="#1c3d45"/>
+    <circle cx="0" cy="0" r="15" fill="none" stroke="#1c3d45"/>
+    <path d="M0 0 L40 -22 A46 46 0 0 0 -6 -45 Z" fill="url(#hmCyan)" opacity="0.35"/>
+    <line x1="0" y1="0" x2="42" y2="-18" stroke="url(#hmCyan)" stroke-width="2"/>
+    <circle cx="22" cy="-26" r="3.5" fill="#7ef0a0"/>
+  </g>
+
+  <!-- capability panel: budget / finance (bottom-left) -->
+  <g transform="translate(90,410)">
+    <rect x="0" y="0" width="104" height="76" rx="8" fill="#0c2027" stroke="#1c3d45"/>
+    <text x="52" y="52" font-family="Menlo,monospace" font-size="42" fill="url(#hmViolet)" text-anchor="middle" font-weight="700">$</text>
+  </g>
+
+  <!-- capability panel: data grid (bottom-right) -->
+  <g transform="translate(408,410)">
+    <rect x="0" y="0" width="104" height="76" rx="8" fill="#0c2027" stroke="#1c3d45"/>
+    <g fill="#1f4b55">
+      <rect x="12" y="14" width="24" height="14" rx="2"/><rect x="42" y="14" width="24" height="14" rx="2"/><rect x="72" y="14" width="20" height="14" rx="2"/>
+      <rect x="12" y="34" width="24" height="14" rx="2" fill="#2a6b78"/><rect x="42" y="34" width="24" height="14" rx="2"/><rect x="72" y="34" width="20" height="14" rx="2" fill="#2a6b78"/>
+      <rect x="12" y="54" width="24" height="10" rx="2"/><rect x="42" y="54" width="24" height="10" rx="2" fill="#2a6b78"/><rect x="72" y="54" width="20" height="10" rx="2"/>
+    </g>
+  </g>
+
+  <!-- alchemical core hexagon -->
+  <g filter="url(#hmGlow)">
+    <polygon points="300,232 359,266 359,334 300,368 241,334 241,266"
+             fill="#08171c" stroke="url(#hmCyan)" stroke-width="3"/>
+    <polygon points="300,258 337,279 337,321 300,342 263,321 263,279"
+             fill="none" stroke="url(#hmViolet)" stroke-width="2"/>
+    <circle cx="300" cy="300" r="12" fill="url(#hmCyan)"/>
+  </g>
+
+  <!-- title bar accent -->
+  <rect x="60" y="548" width="140" height="6" rx="3" fill="url(#hmCyan)"/>
+  <rect x="212" y="548" width="70" height="6" rx="3" fill="#1c3d45"/>
+</svg>

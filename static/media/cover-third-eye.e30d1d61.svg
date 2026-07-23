@@ -1,0 +1,73 @@
+<svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="LLM observability eye">
+  <defs>
+    <radialGradient id="teBg" cx="50%" cy="46%" r="72%">
+      <stop offset="0%" stop-color="#0b1d24"/>
+      <stop offset="55%" stop-color="#040d11"/>
+      <stop offset="100%" stop-color="#010606"/>
+    </radialGradient>
+    <radialGradient id="teIris" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#d6faff"/>
+      <stop offset="30%" stop-color="#92e4ef"/>
+      <stop offset="70%" stop-color="#49e0f4"/>
+      <stop offset="100%" stop-color="#1f6f7e"/>
+    </radialGradient>
+    <linearGradient id="teCyan" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#92e4ef"/>
+      <stop offset="100%" stop-color="#49e0f4"/>
+    </linearGradient>
+    <filter id="teGlow" x="-70%" y="-70%" width="240%" height="240%">
+      <feGaussianBlur stdDeviation="8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="600" height="600" fill="url(#teBg)"/>
+  <g stroke="#123038" stroke-width="1" opacity="0.4">
+    <path d="M0 150H600M0 300H600M0 450H600"/>
+    <path d="M150 0V600M300 0V600M450 0V600"/>
+  </g>
+
+  <!-- data token streams flowing in from both sides -->
+  <g font-family="Menlo,monospace" font-size="15" fill="#1f4b55">
+    <text x="24" y="150">0110</text><text x="24" y="330">prompt</text><text x="30" y="470">1001</text>
+    <text x="500" y="140">token</text><text x="520" y="320">0x1f</text><text x="516" y="468">cost</text>
+  </g>
+  <g stroke="url(#teCyan)" stroke-width="2" opacity="0.4" fill="none">
+    <path d="M90 150 C 180 200, 210 260, 250 290"/>
+    <path d="M96 330 C 170 320, 210 310, 244 305"/>
+    <path d="M96 462 C 180 400, 210 350, 250 318"/>
+    <path d="M508 140 C 430 200, 400 260, 352 292"/>
+    <path d="M556 318 C 460 312, 410 308, 358 305"/>
+    <path d="M552 456 C 440 400, 400 350, 352 320"/>
+  </g>
+
+  <!-- outer visionary triangle -->
+  <polygon points="300,150 452,392 148,392" fill="none" stroke="#1c3d45" stroke-width="2" opacity="0.8"/>
+
+  <!-- the eye -->
+  <g filter="url(#teGlow)">
+    <!-- eye almond -->
+    <path d="M150 305 C 220 235, 380 235, 450 305 C 380 375, 220 375, 150 305 Z"
+          fill="#08171c" stroke="url(#teCyan)" stroke-width="3"/>
+    <!-- iris rings -->
+    <circle cx="300" cy="305" r="62" fill="url(#teIris)"/>
+    <circle cx="300" cy="305" r="62" fill="none" stroke="#d6faff" stroke-width="1.5" opacity="0.6"/>
+    <circle cx="300" cy="305" r="44" fill="none" stroke="#08171c" stroke-width="2" opacity="0.5"/>
+    <!-- circuit spokes in iris -->
+    <g stroke="#08171c" stroke-width="2" opacity="0.55">
+      <line x1="300" y1="243" x2="300" y2="367"/>
+      <line x1="238" y1="305" x2="362" y2="305"/>
+      <line x1="256" y1="261" x2="344" y2="349"/>
+      <line x1="344" y1="261" x2="256" y2="349"/>
+    </g>
+    <!-- pupil -->
+    <circle cx="300" cy="305" r="20" fill="#020a0c"/>
+    <circle cx="292" cy="297" r="6" fill="#d6faff" opacity="0.9"/>
+  </g>
+
+  <!-- scan line across the eye -->
+  <line x1="150" y1="305" x2="450" y2="305" stroke="#7ef0a0" stroke-width="1.5" opacity="0.5" stroke-dasharray="3 7"/>
+
+  <rect x="60" y="548" width="150" height="6" rx="3" fill="url(#teCyan)"/>
+  <rect x="222" y="548" width="64" height="6" rx="3" fill="#1c3d45"/>
+</svg>

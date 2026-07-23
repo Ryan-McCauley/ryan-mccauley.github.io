@@ -1,0 +1,78 @@
+<svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Network port security map">
+  <defs>
+    <radialGradient id="ssBg" cx="50%" cy="42%" r="75%">
+      <stop offset="0%" stop-color="#1c0a0e"/>
+      <stop offset="55%" stop-color="#0d0406"/>
+      <stop offset="100%" stop-color="#060202"/>
+    </radialGradient>
+    <linearGradient id="ssRed" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffb3c0"/>
+      <stop offset="100%" stop-color="#ff4d67"/>
+    </linearGradient>
+    <linearGradient id="ssSafe" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#a8ffcf"/>
+      <stop offset="100%" stop-color="#49f4b0"/>
+    </linearGradient>
+    <filter id="ssGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="7" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="600" height="600" fill="url(#ssBg)"/>
+
+  <g stroke="#3a1420" stroke-width="1" opacity="0.5">
+    <path d="M0 100H600M0 200H600M0 300H600M0 400H600M0 500H600"/>
+    <path d="M100 0V600M200 0V600M300 0V600M400 0V600M500 0V600"/>
+  </g>
+
+  <!-- central host -->
+  <g filter="url(#ssGlow)">
+    <circle cx="300" cy="300" r="42" fill="#170609" stroke="url(#ssRed)" stroke-width="3"/>
+    <circle cx="300" cy="300" r="10" fill="url(#ssRed)"/>
+  </g>
+
+  <!-- connections to open/closed ports -->
+  <g stroke-width="2" fill="none">
+    <path d="M300 300 L170 190" stroke="url(#ssRed)"/>
+    <path d="M300 300 L430 190" stroke="url(#ssSafe)"/>
+    <path d="M300 300 L170 410" stroke="url(#ssSafe)"/>
+    <path d="M300 300 L430 410" stroke="url(#ssRed)"/>
+    <path d="M300 300 L300 150" stroke="url(#ssSafe)"/>
+    <path d="M300 300 L300 450" stroke="url(#ssRed)"/>
+  </g>
+
+  <!-- port nodes: red = open/exposed, green = closed/safe -->
+  <g>
+    <circle cx="170" cy="190" r="10" fill="url(#ssRed)"/>
+    <text x="170" y="172" font-family="Menlo,monospace" font-size="13" fill="#ff9fae" text-anchor="middle">22</text>
+
+    <circle cx="430" cy="190" r="10" fill="url(#ssSafe)"/>
+    <text x="430" y="172" font-family="Menlo,monospace" font-size="13" fill="#9fffd0" text-anchor="middle">443</text>
+
+    <circle cx="170" cy="410" r="10" fill="url(#ssSafe)"/>
+    <text x="170" y="434" font-family="Menlo,monospace" font-size="13" fill="#9fffd0" text-anchor="middle">80</text>
+
+    <circle cx="430" cy="410" r="10" fill="url(#ssRed)"/>
+    <text x="430" y="434" font-family="Menlo,monospace" font-size="13" fill="#ff9fae" text-anchor="middle">3389</text>
+
+    <circle cx="300" cy="150" r="10" fill="url(#ssSafe)"/>
+    <circle cx="300" cy="450" r="10" fill="url(#ssRed)"/>
+    <text x="300" y="478" font-family="Menlo,monospace" font-size="13" fill="#ff9fae" text-anchor="middle">445</text>
+  </g>
+
+  <!-- posture report tile -->
+  <g transform="translate(88,410)">
+    <rect x="0" y="0" width="104" height="76" rx="8" fill="#170609" stroke="#3a1420"/>
+    <text x="52" y="34" font-family="Menlo,monospace" font-size="11" fill="#c98a95" text-anchor="middle">EXPOSURE</text>
+    <text x="52" y="60" font-family="Menlo,monospace" font-size="26" fill="url(#ssRed)" text-anchor="middle" font-weight="700">3</text>
+  </g>
+  <g transform="translate(408,108)">
+    <rect x="0" y="0" width="104" height="76" rx="8" fill="#170609" stroke="#3a1420"/>
+    <text x="52" y="34" font-family="Menlo,monospace" font-size="11" fill="#8fd9b0" text-anchor="middle">SECURE</text>
+    <text x="52" y="60" font-family="Menlo,monospace" font-size="26" fill="url(#ssSafe)" text-anchor="middle" font-weight="700">3</text>
+  </g>
+
+  <rect x="60" y="548" width="140" height="6" rx="3" fill="url(#ssRed)"/>
+  <rect x="212" y="548" width="70" height="6" rx="3" fill="#3a1420"/>
+</svg>
