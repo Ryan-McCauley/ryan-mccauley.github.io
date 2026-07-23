@@ -1,20 +1,20 @@
 {
-  "main.css": "/static/css/main.6309b52c.chunk.css",
-  "main.js": "/static/js/main.63cecb4a.chunk.js",
-  "main.js.map": "/static/js/main.63cecb4a.chunk.js.map",
-  "static/js/1.fe72b404.chunk.js": "/static/js/1.fe72b404.chunk.js",
-  "static/js/1.fe72b404.chunk.js.map": "/static/js/1.fe72b404.chunk.js.map",
-  "runtime~main.js": "/static/js/runtime~main.229c360f.js",
-  "runtime~main.js.map": "/static/js/runtime~main.229c360f.js.map",
-  "static/media/cover-homunculus.svg": "/static/media/cover-homunculus.345d5df6.svg",
-  "static/media/cover-agent-skills.svg": "/static/media/cover-agent-skills.bdaeaf01.svg",
-  "static/media/cover-third-eye.svg": "/static/media/cover-third-eye.e30d1d61.svg",
-  "static/media/cover-half-life.svg": "/static/media/cover-half-life.09def0f1.svg",
-  "static/media/cover-tractor-beam.svg": "/static/media/cover-tractor-beam.f03cd90c.svg",
-  "static/media/cover-socket-search.svg": "/static/media/cover-socket-search.713b99d2.svg",
-  "static/media/JsChat.mp4": "/static/media/JsChat.bec61c4b.mp4",
-  "static/css/main.6309b52c.chunk.css.map": "/static/css/main.6309b52c.chunk.css.map",
-  "index.html": "/index.html",
-  "precache-manifest.f679ad8ed9e4078d64e44c104a0b1e62.js": "/precache-manifest.f679ad8ed9e4078d64e44c104a0b1e62.js",
-  "service-worker.js": "/service-worker.js"
+  "files": {
+    "main.css": "/static/css/main.5506a31a.css",
+    "main.js": "/static/js/main.db678326.js",
+    "static/media/JsChat.mp4": "/static/media/JsChat.168ab3d62ae17aa9e139.mp4",
+    "static/media/cover-homunculus.svg": "/static/media/cover-homunculus.4716fae34ec2bb2a6418d29f83ea2f7d.svg",
+    "static/media/cover-agent-skills.svg": "/static/media/cover-agent-skills.182c42b43736a33d70e34a389e38fa49.svg",
+    "static/media/cover-socket-search.svg": "/static/media/cover-socket-search.2148b74083dc69e41d4561196dd5cbee.svg",
+    "static/media/cover-third-eye.svg": "/static/media/cover-third-eye.e9668bd5460dc4363e85de95a57ee674.svg",
+    "static/media/cover-tractor-beam.svg": "/static/media/cover-tractor-beam.d13c971e0dd07f9b891bc26c239314c4.svg",
+    "static/media/cover-half-life.svg": "/static/media/cover-half-life.8215e71ec3a80ca375dc510ce0be1c86.svg",
+    "index.html": "/index.html",
+    "main.5506a31a.css.map": "/static/css/main.5506a31a.css.map",
+    "main.db678326.js.map": "/static/js/main.db678326.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5506a31a.css",
+    "static/js/main.db678326.js"
+  ]
 }
