@@ -1,4 +1,7 @@
 # https://www.robotstxt.org/robotstxt.html
-# Privacy-minded: ask crawlers not to index this site.
+# Public portfolio — crawlers welcome. The résumé is intentionally not on the
+# site (request-only), so there is nothing sensitive to hide from indexing.
 User-agent: *
-Disallow: /
+Allow: /
+
+Sitemap: https://www.ryanmccauley.com/sitemap.xml

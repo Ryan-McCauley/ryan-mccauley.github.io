@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Ryan McCauley",
+  "name": "Ryan McCauley — Software Developer & Builder",
+  "description": "Software developer and builder in East Texas. Custom software and web consulting, AI-driven systems, on-device iOS apps, and OSINT tooling.",
   "icons": [
     {
       "src": "favicon.ico",
@@ -20,6 +21,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#150710",
+  "background_color": "#150710"
 }
