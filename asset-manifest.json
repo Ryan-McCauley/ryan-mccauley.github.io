@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.5506a31a.css",
-    "main.js": "/static/js/main.1e20d194.js",
+    "main.js": "/static/js/main.ea1505e0.js",
     "static/media/cover-homunculus.svg": "/static/media/cover-homunculus.4716fae34ec2bb2a6418d29f83ea2f7d.svg",
     "static/media/cover-agent-skills.svg": "/static/media/cover-agent-skills.182c42b43736a33d70e34a389e38fa49.svg",
     "static/media/cover-socket-search.svg": "/static/media/cover-socket-search.2148b74083dc69e41d4561196dd5cbee.svg",
@@ -10,10 +10,10 @@
     "static/media/cover-tractor-beam.svg": "/static/media/cover-tractor-beam.d13c971e0dd07f9b891bc26c239314c4.svg",
     "static/media/cover-half-life.svg": "/static/media/cover-half-life.8215e71ec3a80ca375dc510ce0be1c86.svg",
     "main.5506a31a.css.map": "/static/css/main.5506a31a.css.map",
-    "main.1e20d194.js.map": "/static/js/main.1e20d194.js.map"
+    "main.ea1505e0.js.map": "/static/js/main.ea1505e0.js.map"
   },
   "entrypoints": [
     "static/css/main.5506a31a.css",
-    "static/js/main.1e20d194.js"
+    "static/js/main.ea1505e0.js"
   ]
 }
