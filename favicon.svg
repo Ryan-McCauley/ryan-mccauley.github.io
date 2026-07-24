@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Ryan McCauley">
+  <!-- The site's hero craft (src/components/NewHome/index.js, svg.craft) redrawn for a 16px
+       tab icon: same hull ellipse + canopy arc in alien green with the brass dome band on top,
+       but with far heavier strokes and no glow filter, since a 1px hairline and a soft shadow
+       both disappear at favicon size. The wine tile is deliberate — it keeps the green legible
+       on light and dark browser chrome alike, and matches the site's theme-color. -->
+  <rect width="64" height="64" rx="13" fill="#150710"/>
+  <g transform="rotate(-22 32 34)">
+    <g fill="none" stroke="#4fc394" stroke-width="4.2" stroke-linecap="round">
+      <ellipse cx="32" cy="37" rx="24" ry="6"/>
+      <path d="M13 35 q19 -14 38 0"/>
+    </g>
+    <ellipse cx="32" cy="30.5" rx="9" ry="3" fill="none" stroke="#c9a86a" stroke-width="3.2"/>
+  </g>
+</svg>

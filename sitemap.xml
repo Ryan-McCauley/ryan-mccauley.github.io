@@ -2,41 +2,49 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.ryanmccauley.com/</loc>
+    <lastmod>2026-07-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ryanmccauley.com/homunculus</loc>
+    <lastmod>2026-07-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.ryanmccauley.com/blog/building-homunculus</loc>
+    <lastmod>2026-07-18</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.ryanmccauley.com/blog/trading-strategies-as-agent-skills</loc>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.ryanmccauley.com/blog/third-eye-llm-observability</loc>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.ryanmccauley.com/blog/half-life-pharmacokinetics-on-a-watch-face</loc>
+    <lastmod>2025-10-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.ryanmccauley.com/blog/tractor-beam-catching-what-gets-deleted</loc>
+    <lastmod>2023-08-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.ryanmccauley.com/blog/socket-search-security-audits-anyone-can-read</loc>
+    <lastmod>2023-10-24</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
