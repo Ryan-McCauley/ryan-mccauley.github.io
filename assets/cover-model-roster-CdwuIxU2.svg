@@ -1,0 +1,84 @@
+<svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A roster of model lanes, each pinned and recorded">
+  <defs>
+    <radialGradient id="mrBg" cx="50%" cy="42%" r="76%">
+      <stop offset="0%" stop-color="#101a2b"/>
+      <stop offset="55%" stop-color="#070c16"/>
+      <stop offset="100%" stop-color="#03060c"/>
+    </radialGradient>
+    <linearGradient id="mrAmber" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f2c66b"/>
+      <stop offset="100%" stop-color="#e39a3c"/>
+    </linearGradient>
+    <linearGradient id="mrTeal" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#8fe6d8"/>
+      <stop offset="100%" stop-color="#3fbfae"/>
+    </linearGradient>
+    <linearGradient id="mrViolet" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#b79ce8"/>
+      <stop offset="100%" stop-color="#7b5fc4"/>
+    </linearGradient>
+    <linearGradient id="mrDim" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#3b4a63"/>
+      <stop offset="100%" stop-color="#222d3f"/>
+    </linearGradient>
+    <filter id="mrGlow" x="-70%" y="-70%" width="240%" height="240%">
+      <feGaussianBlur stdDeviation="7" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="600" height="600" fill="url(#mrBg)"/>
+
+  <!-- faint grid: the ledger the lanes are drawn on -->
+  <g stroke="#16243a" stroke-width="1" opacity="0.55">
+    <path d="M90 120 H540 M90 200 H540 M90 280 H540 M90 360 H540 M90 440 H540"/>
+    <path d="M170 96 V468 M260 96 V468 M350 96 V468 M440 96 V468 M530 96 V468"/>
+  </g>
+
+  <!-- lane labels: pinned model slots -->
+  <g fill="#54678a" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" letter-spacing="1.5">
+    <text x="62" y="126" text-anchor="end">OPUS</text>
+    <text x="62" y="206" text-anchor="end">SONNET</text>
+    <text x="62" y="286" text-anchor="end">HAIKU</text>
+    <text x="62" y="366" text-anchor="end">FABLE</text>
+    <text x="62" y="446" text-anchor="end">DEFAULT</text>
+  </g>
+
+  <!-- run bars: each lane carries a different model, recorded per run -->
+  <g filter="url(#mrGlow)">
+    <rect x="112" y="110" width="118" height="18" rx="3" fill="url(#mrAmber)" opacity="0.92"/>
+    <rect x="300" y="110" width="74" height="18" rx="3" fill="url(#mrAmber)" opacity="0.62"/>
+
+    <rect x="150" y="190" width="196" height="18" rx="3" fill="url(#mrTeal)" opacity="0.92"/>
+    <rect x="392" y="190" width="122" height="18" rx="3" fill="url(#mrTeal)" opacity="0.7"/>
+
+    <rect x="118" y="270" width="46" height="18" rx="3" fill="url(#mrTeal)" opacity="0.5"/>
+    <rect x="196" y="270" width="38" height="18" rx="3" fill="url(#mrTeal)" opacity="0.5"/>
+    <rect x="266" y="270" width="42" height="18" rx="3" fill="url(#mrTeal)" opacity="0.5"/>
+    <rect x="340" y="270" width="36" height="18" rx="3" fill="url(#mrTeal)" opacity="0.5"/>
+    <rect x="408" y="270" width="44" height="18" rx="3" fill="url(#mrTeal)" opacity="0.5"/>
+    <rect x="484" y="270" width="38" height="18" rx="3" fill="url(#mrTeal)" opacity="0.5"/>
+
+    <!-- the unproven one: dashed outline, no fill, no desk history yet -->
+    <rect x="238" y="350" width="150" height="18" rx="3" fill="none"
+          stroke="url(#mrViolet)" stroke-width="2" stroke-dasharray="7 5" opacity="0.95"/>
+
+    <rect x="130" y="430" width="88" height="18" rx="3" fill="url(#mrDim)"/>
+    <rect x="286" y="430" width="132" height="18" rx="3" fill="url(#mrDim)"/>
+  </g>
+
+  <!-- context-fill gauge: how full the window got before it compacted -->
+  <g transform="translate(90 500)">
+    <rect x="0" y="0" width="450" height="10" rx="5" fill="#16243a"/>
+    <rect x="0" y="0" width="331" height="10" rx="5" fill="url(#mrTeal)" opacity="0.85"/>
+    <rect x="331" y="-6" width="2" height="22" fill="#f2c66b" opacity="0.9"/>
+  </g>
+  <text x="90" y="536" fill="#54678a" font-family="ui-monospace, SFMono-Regular, Menlo, monospace"
+        font-size="13" letter-spacing="1.2">CONTEXT 74% · 1 COMPACTION</text>
+
+  <!-- the pin: a model is chosen per agent, not once for the system -->
+  <g transform="translate(506 96)" opacity="0.95">
+    <circle cx="0" cy="0" r="7" fill="#f2c66b"/>
+    <path d="M0 7 V44" stroke="url(#mrAmber)" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+</svg>

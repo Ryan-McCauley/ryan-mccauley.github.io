@@ -1,4 +1,4 @@
-import{a as e,c as t,l as n,n as r,o as i}from"./index-BotcohF3.js";var a=n(t(),1),o=`'Megrim', 'Didot', 'Bodoni MT', Garamond, serif`,s=`'Didot', 'Bodoni MT', 'Hoefler Text', Garamond, 'Times New Roman', serif`,c=`'SFMono-Regular', ui-monospace, Menlo, Consolas, monospace`,l=`-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif`,u=e.header`
+import{a as e,c as t,l as n,n as r,o as i}from"./index-C2lOIWJp.js";var a=n(t(),1),o=`'Megrim', 'Didot', 'Bodoni MT', Garamond, serif`,s=`'Didot', 'Bodoni MT', 'Hoefler Text', Garamond, 'Times New Roman', serif`,c=`'SFMono-Regular', ui-monospace, Menlo, Consolas, monospace`,l=`-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif`,u=e.header`
   position: sticky;
   top: 0;
   z-index: 20;
