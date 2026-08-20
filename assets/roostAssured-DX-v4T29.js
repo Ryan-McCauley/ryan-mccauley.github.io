@@ -1,0 +1,797 @@
+import{i as e,l as t,n,o as r,s as i,u as a}from"./index-DAshIlSm.js";var o=a(t(),1),s={ground:`#17130f`,panel:`#1d1913`,elev:`#241f19`,amber:`#d9a441`,amberHot:`#f59e0b`,amberDeep:`#d97706`,cream:`#f3ede1`,creamSoft:`#b7ab98`,dim:`#8a7c68`,dimmer:`#6b6154`,emerald:`#6ee7b7`,rust:`#f3a5a5`,line:`rgba(217, 164, 65, 0.14)`,lineStrong:`rgba(217, 164, 65, 0.3)`,grad:`linear-gradient(100deg, #d9a441, #f59e0b, #b45309, #d9a441)`},c=`156px`,l=e`
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+`,u=e`
+  0%   { opacity: 0; transform: scale(1.06); filter: brightness(2.2) saturate(0); }
+  45%  { opacity: 0.5; filter: brightness(1.3) saturate(0.6); }
+  100% { opacity: 1; transform: scale(1); filter: none; }
+`,d=e`
+  0%   { opacity: 0; transform: translateY(-24%); }
+  12%  { opacity: 1; }
+  88%  { opacity: 1; }
+  100% { opacity: 0; transform: translateY(460%); }
+`,f=r.div`
+  background:
+    radial-gradient(60vw 50vh at 12% 0%, rgba(217, 164, 65, 0.07), transparent 70%),
+    radial-gradient(50vw 40vh at 88% 60%, rgba(245, 158, 11, 0.05), transparent 70%),
+    ${s.ground};
+  color: ${s.cream};
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  font-size: 16px;
+
+  /* App.css carries a global \`* { font-family: 'fira code', monospace }\`, which
+     beats inheritance on every element that doesn't declare its own face. The
+     Homunculus pages are happy with that -- they're terminals. This one is a
+     consumer marketplace, so it re-asserts its face for descendants. The code
+     figures opt back out with a doubled class (see Code below). */
+  & * {
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  }
+  line-height: 1.65;
+  min-height: 100vh;
+  overflow-x: hidden;
+`,p=r.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+  background: ${s.grad};
+  background-size: 200% auto;
+  z-index: 60;
+`,m=r.nav`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: ${c};
+  height: 100vh;
+  padding: 22px 6px;
+  background: ${s.panel};
+  border-right: 1px solid ${s.line};
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  z-index: 50;
+
+  @media (max-width: 1020px) {
+    position: sticky;
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 10px;
+    overflow-x: auto;
+    border-right: 0;
+    border-bottom: 1px solid ${s.line};
+  }
+`,h=r.div`
+  padding: 0 10px 10px;
+  margin-bottom: 6px;
+  border-bottom: 1px solid ${s.line};
+  color: ${s.amber};
+  font-size: 15px;
+  letter-spacing: 2px;
+
+  @media (max-width: 1020px) { display: none; }
+`,g=r.a`
+  display: flex;
+  align-items: center;
+  padding: 7px 10px;
+  color: ${e=>e.$active?s.cream:s.dim};
+  background: ${e=>e.$active?s.elev:`transparent`};
+  border-left: 2px solid ${e=>e.$active?s.amber:`transparent`};
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: color 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+
+  &:hover { color: ${s.cream}; }
+  &:focus-visible { outline: 2px solid ${s.amberHot}; outline-offset: 2px; }
+
+  span {
+    margin-left: auto;
+    font-size: 12px;
+    color: ${s.dimmer};
+  }
+
+  @media (max-width: 1020px) {
+    border-left: 0;
+    border-bottom: 2px solid ${e=>e.$active?s.amber:`transparent`};
+    background: transparent;
+    white-space: nowrap;
+    padding: 12px;
+
+    span { display: none; }
+  }
+`,_=r.div`
+  margin-top: auto;
+  padding: 0 10px;
+  color: ${s.dimmer};
+  font-size: 12px;
+  letter-spacing: 1px;
+  line-height: 1.5;
+
+  @media (max-width: 1020px) { display: none; }
+`,v=r.div`
+  margin-left: ${c};
+
+  @media (max-width: 1020px) { margin-left: 0; }
+`,y=r.div`
+  max-width: 1680px;
+  /* explicit: Wrap is also a flex child in the hero, where an auto horizontal
+     margin would otherwise cancel the stretch and shrink it to its content */
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 5vw, 72px);
+  box-sizing: border-box;
+`,b=r.header`
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-top: 120px;
+  overflow: hidden;
+
+  @media (max-width: 1020px) {
+    min-height: 76vh;
+    padding-top: 60px;
+  }
+`,ee=r.div`
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0;
+  transform: scale(1.06);
+  animation: ${u} 1.6s cubic-bezier(0.2, 0.7, 0.3, 1) 0.15s forwards;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 22%;
+    /* enough defocus that the headline holds, little enough that it still
+       reads as the actual instrument behind the glass */
+    filter: blur(2px) saturate(1.15);
+    transform: scale(1.02);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+`,te=r.div`
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(180deg, rgba(5,3,10,0.8) 0%, rgba(5,3,10,0.33) 32%, rgba(5,3,10,0.9) 78%, ${s.ground} 100%),
+    linear-gradient(90deg, rgba(5,3,10,0.95) 0%, rgba(5,3,10,0.6) 46%, rgba(5,3,10,0.3) 100%);
+`,x=r(y)`
+  position: relative;
+  z-index: 2;
+  padding-bottom: 64px;
+`,S=r(y)`
+  position: relative;
+  z-index: 2;
+`,C=r.p`
+  font-size: 13px;
+  letter-spacing: 3px;
+  color: ${s.dim};
+  text-transform: uppercase;
+  margin: 0 0 20px;
+
+  b { color: ${s.amber}; font-weight: 400; }
+`,w=r.h1`
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  font-weight: 700;
+  font-size: clamp(38px, 6.4vw, 92px);
+  line-height: 1.02;
+  letter-spacing: -0.5px;
+  text-wrap: balance;
+  margin: 0 0 28px;
+  max-width: 15ch;
+  color: #fff;
+
+  em {
+    font-style: normal;
+    background: ${s.grad};
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: ${l} 9s linear infinite;
+
+    @media (prefers-reduced-motion: reduce) { animation: none; }
+  }
+`,T=r.p`
+  font-size: clamp(16px, 1.5vw, 20px);
+  color: ${s.cream};
+  max-width: 60ch;
+  margin: 0 0 36px;
+`,E=r.div`
+  display: flex;
+  flex-wrap: wrap;
+  border-top: 1px solid ${s.line};
+  border-bottom: 1px solid ${s.line};
+  background: rgba(23, 19, 15, 0.62);
+
+  div {
+    padding: 13px 24px 13px 0;
+    margin-right: 24px;
+    border-right: 1px solid ${s.line};
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    color: ${s.dim};
+    text-transform: uppercase;
+    font-variant-numeric: tabular-nums;
+  }
+  div:last-child { border-right: 0; }
+  b { color: ${s.amber}; font-weight: 400; }
+
+  /* Five cells wrapping in a flex row left right-hand rules dangling mid-row.
+     A single column reads cleanly and stays correct for any cell count — a
+     two-up grid would leave the odd last cell as a phantom half-row. */
+  @media (max-width: 700px) {
+    display: block;
+
+    div {
+      padding: 11px 0;
+      margin-right: 0;
+      border-right: 0;
+      border-bottom: 1px solid ${s.line};
+      font-size: 12px;
+    }
+    div:last-child { border-bottom: 0; }
+  }
+`,D=r.section`
+  padding-top: clamp(88px, 12vh, 150px);
+`,O=r.p`
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  letter-spacing: 3px;
+  color: ${s.amber};
+  text-transform: uppercase;
+  margin: 0 0 16px;
+
+  &:after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    max-width: 220px;
+    background: linear-gradient(90deg, ${s.lineStrong}, transparent);
+  }
+`,k=r.h2`
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  font-weight: 700;
+  font-size: clamp(27px, 3.5vw, 50px);
+  line-height: 1.1;
+  letter-spacing: -0.3px;
+  text-wrap: balance;
+  margin: 0 0 18px;
+  color: #fff;
+  max-width: 20ch;
+`,A=r.p`
+  font-size: clamp(15px, 1.35vw, 19px);
+  color: ${s.cream};
+  margin: 0;
+  max-width: 62ch;
+`,j=r.div`
+  margin-bottom: 44px;
+  max-width: 66ch;
+`,M=r.div`
+  position: relative;
+  overflow: hidden;
+  border: 1px solid ${s.lineStrong};
+  background: ${s.panel};
+  box-shadow:
+    0 0 0 1px ${s.ground},
+    0 30px 90px -40px rgba(70, 240, 255, 0.25),
+    0 20px 60px -30px rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transform: translateY(26px) scale(0.985);
+  transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.2, 0.7, 0.3, 1);
+
+  img { display: block; width: 100%; height: auto; }
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 22%;
+    pointer-events: none;
+    opacity: 0;
+    background:
+      linear-gradient(180deg, transparent, rgba(70,240,255,0.12) 62%, rgba(70,240,255,0) 63%, transparent),
+      linear-gradient(180deg, transparent 61%, ${s.amberHot} 62%, transparent 63%);
+    mix-blend-mode: screen;
+  }
+
+  .in & { opacity: 1; transform: none; }
+  .in &:after { animation: ${d} 1.25s cubic-bezier(0.3, 0.1, 0.2, 1) 0.18s 1; }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: opacity 0.2s linear;
+    transform: none;
+    .in &:after { animation: none; }
+  }
+
+  /* Shrink-to-fit renders a 1200px dashboard capture at ~28% on a phone, where
+     no panel in it is readable. Keep a legible intrinsic width and pan. */
+  @media (max-width: 700px) {
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    &::-webkit-scrollbar { display: none; }
+
+    img { width: 860px; max-width: none; }
+  }
+`,N=r.figure`
+  margin: 0;
+`,P=r.figcaption`
+  margin-top: 14px;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  color: ${s.dimmer};
+  text-transform: uppercase;
+
+  /* The capture pans on mobile and the scrollbar is hidden, so say so. */
+  @media (max-width: 700px) {
+    &::before {
+      content: 'Drag to read \\25B8 ';
+      color: ${s.amber};
+    }
+  }
+`,F=r.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(258px, 1fr));
+  margin-top: 52px;
+  border-top: 1px solid ${s.line};
+  border-left: 1px solid ${s.line};
+`,I=r.div`
+  border-right: 1px solid ${s.line};
+  border-bottom: 1px solid ${s.line};
+  padding: 26px 26px 30px;
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition-delay: ${e=>(.06*(e.$i||0)+.1).toFixed(2)}s;
+
+  .in & { opacity: 1; transform: none; }
+
+  h3 {
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    margin: 0 0 10px;
+    /* Three distinct readings: neutral notes stay cream, a caveat takes the brand
+       amber, and an outright problem takes the rust. The PRISM sheet this was
+       adapted from used cyan as its neutral, which collapsed into the warn tone
+       once the palette went warm. */
+    color: ${e=>e.$tone===`warn`?s.amber:e.$tone===`hot`?s.rust:s.cream};
+  }
+  p {
+    margin: 0;
+    font-size: 15px;
+    color: ${s.dim};
+    line-height: 1.6;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: opacity 0.2s linear;
+    transform: none;
+  }
+`,L=r.div`
+  margin-top: 56px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+  gap: clamp(24px, 3vw, 56px);
+  align-items: center;
+
+  h3 {
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+    font-weight: 500;
+    font-size: clamp(17px, 1.6vw, 23px);
+    letter-spacing: 0.4px;
+    margin: 0 0 14px;
+    color: #fff;
+  }
+  p {
+    margin: 0 0 14px;
+    color: ${s.dim};
+    font-size: 15px;
+  }
+  p:last-child { margin-bottom: 0; }
+
+  @media (max-width: 1020px) { grid-template-columns: 1fr; }
+`,R=r.div`
+  margin-top: clamp(88px, 12vh, 150px);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1px;
+  background: ${s.line};
+  border-top: 1px solid ${s.lineStrong};
+  border-bottom: 1px solid ${s.lineStrong};
+
+  div { background: ${s.panel}; padding: 30px 26px; }
+
+  b {
+    display: block;
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+    font-weight: 700;
+    font-size: clamp(26px, 3vw, 40px);
+    line-height: 1;
+    color: ${s.amber};
+    font-variant-numeric: tabular-nums;
+    margin-bottom: 10px;
+  }
+  span {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: ${s.dim};
+  }
+`,z=r.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: clamp(88px, 12vh, 150px);
+`,B=`
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 13px 26px;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+`;r(i)`
+  ${B}
+  color: ${s.amber};
+  border: 1px solid ${s.lineStrong};
+
+  &:hover {
+    background: rgba(56, 232, 255, 0.08);
+    box-shadow: 0 0 20px rgba(56, 232, 255, 0.2);
+  }
+  &:focus-visible { outline: 2px solid ${s.amberHot}; outline-offset: 2px; }
+`;var V=r.a`
+  ${B}
+  color: ${s.amber};
+  border: 1px solid ${s.lineStrong};
+
+  &:hover {
+    background: rgba(56, 232, 255, 0.08);
+    box-shadow: 0 0 20px rgba(56, 232, 255, 0.2);
+  }
+  &:focus-visible { outline: 2px solid ${s.amberHot}; outline-offset: 2px; }
+`,H=r.footer`
+  margin-top: 60px;
+  padding: 46px 0 80px;
+  border-top: 1px solid ${s.line};
+  color: ${s.dimmer};
+  font-size: 13px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 10px 34px;
+
+  b { color: ${s.dim}; font-weight: 400; }
+`,U=r.p`
+  flex: 1 1 100%;
+  margin: 10px 0 0;
+  max-width: 78ch;
+  font-size: 13px;
+  line-height: 1.7;
+  letter-spacing: 0;
+  text-transform: none;
+  color: ${s.dim};
+`,W=r.pre`
+  /* Doubled deliberately: outranks the descendant font rule on Page, for this
+     element and the emphasis spans inside it. */
+  &&, && * {
+    font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, monospace;
+  }
+
+  margin: 0;
+  padding: 20px 22px;
+  overflow-x: auto;
+  background: ${s.panel};
+  border: 1px solid ${s.line};
+  border-left: 2px solid ${s.amber};
+  border-radius: 3px;
+  font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, monospace;
+  font-size: 13.5px;
+  line-height: 1.72;
+  color: ${s.cream};
+  tab-size: 2;
+
+  /* Comments carry most of the reasoning in these excerpts, so they get their
+     own weight rather than being dimmed into unreadability. */
+  i {
+    font-style: normal;
+    color: ${s.dim};
+  }
+  b {
+    font-weight: 400;
+    color: ${s.amber};
+  }
+
+  @media (max-width: 700px) {
+    font-size: 12px;
+    padding: 15px 16px;
+  }
+`,G=r.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 11.5px;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: ${s.dimmer};
+
+  b {
+    font-weight: 400;
+    color: ${s.amber};
+  }
+  &:after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, ${s.line}, transparent);
+  }
+
+  /* A full file path plus 1.6px of tracking doesn't fit a phone on one line, and
+     nowrap flex just clipped the filename -- the useful half. Wrap instead, and
+     drop the trailing rule since it has nothing left to lead into. */
+  @media (max-width: 700px) {
+    flex-wrap: wrap;
+    gap: 0 8px;
+    letter-spacing: 1.1px;
+    font-size: 10.5px;
+    word-break: break-word;
+
+    &:after { display: none; }
+  }
+`,K=r.ol`
+  list-style: none;
+  counter-reset: step;
+  margin: 34px 0 0;
+  padding: 0;
+
+  li {
+    counter-increment: step;
+    position: relative;
+    padding: 0 0 26px 52px;
+
+    &:before {
+      content: counter(step, decimal-leading-zero);
+      position: absolute;
+      left: 0;
+      top: 1px;
+      width: 30px;
+      height: 30px;
+      display: grid;
+      place-items: center;
+      border: 1px solid ${s.lineStrong};
+      border-radius: 50%;
+      background: ${s.panel};
+      font-size: 11.5px;
+      letter-spacing: 0.5px;
+      color: ${s.amber};
+    }
+
+    /* the spine, drawn between beats but not past the last one */
+    &:after {
+      content: '';
+      position: absolute;
+      left: 15px;
+      top: 36px;
+      bottom: 8px;
+      width: 1px;
+      background: linear-gradient(180deg, ${s.lineStrong}, ${s.line});
+    }
+    &:last-child { padding-bottom: 0; }
+    &:last-child:after { display: none; }
+
+    h4 {
+      margin: 4px 0 5px;
+      font-size: 16px;
+      font-weight: 600;
+      color: ${s.cream};
+    }
+    p {
+      margin: 0;
+      font-size: 14.5px;
+      color: ${s.creamSoft};
+      max-width: 68ch;
+    }
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.92em;
+      color: ${s.amber};
+    }
+  }
+
+  /* The commit beat is the whole point of the sequence — it is what separates a
+     charge that can be rolled away from one that cannot. */
+  li.pivot:before {
+    border-color: ${s.amber};
+    background: ${s.amber};
+    color: ${s.ground};
+  }
+
+  @media (max-width: 700px) {
+    li { padding-left: 42px; }
+    li:before { width: 26px; height: 26px; font-size: 10.5px; }
+    li:after { left: 13px; top: 32px; }
+  }
+`,q=r.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  margin-top: 34px;
+
+  @media (max-width: 900px) { grid-template-columns: 1fr; }
+`,J=r.dl`
+  display: grid;
+  grid-template-columns: minmax(140px, 200px) 1fr;
+  gap: 0;
+  margin: 34px 0 0;
+  border-top: 1px solid ${s.line};
+
+  dt {
+    padding: 15px 20px 15px 0;
+    border-bottom: 1px solid ${s.line};
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 14px;
+    color: ${s.amber};
+  }
+  dd {
+    margin: 0;
+    padding: 15px 0;
+    border-bottom: 1px solid ${s.line};
+    font-size: 15px;
+    color: ${s.dim};
+    line-height: 1.6;
+  }
+
+  b {
+    font-weight: 400;
+    color: ${s.cream};
+  }
+
+  /* Two columns become unreadable once the name column is squeezed; stack the
+     pair and let the name act as a heading for its own row. */
+  @media (max-width: 640px) {
+    display: block;
+
+    dt {
+      padding: 15px 0 2px;
+      border-bottom: 0;
+    }
+    dd { padding: 0 0 15px; }
+  }
+`,Y=r.h3`
+  margin: 60px 0 14px;
+  font-size: clamp(20px, 2.2vw, 28px);
+  font-weight: 600;
+  color: ${s.cream};
+  letter-spacing: -0.2px;
+`,X=`/assets/hero-Ba7_jwo9.png`,Z=`/assets/hero-dark-Bo5vY0po.png`,ne=`/assets/become-sitter-D4wczZU5.png`,re=`/assets/background-check-BcoG5XBO.png`,Q=n(),ie=`https://github.com/Ryan-McCauley/RoostAssured`,$=[{id:`marketplace`,kicker:`The marketplace`},{id:`vetting`,kicker:`Vetting · Checkr`},{id:`money`,kicker:`Money · Stripe`},{id:`reliability`,kicker:`When the wire lies`},{id:`infrastructure`,kicker:`Shipping it`}],ae=()=>{let e=(0,o.useRef)(null),[t,n]=(0,o.useState)($[0].id),[r,i]=(0,o.useState)({});(0,o.useEffect)(()=>{let e=new IntersectionObserver(e=>{e.forEach(e=>{e.isIntersecting&&(n(e.target.id),i(t=>t[e.target.id]?t:{...t,[e.target.id]:!0}))})},{rootMargin:`-45% 0px -45% 0px`});return $.forEach(t=>{let n=document.getElementById(t.id);n&&e.observe(n)}),()=>e.disconnect()},[]),(0,o.useEffect)(()=>{let t=!1,n=()=>{t||(t=!0,window.requestAnimationFrame(()=>{let n=document.body.scrollHeight-window.innerHeight;e.current&&(e.current.style.transform=`scaleX(${n>0?window.scrollY/n:0})`),t=!1}))};return window.addEventListener(`scroll`,n,{passive:!0}),n(),()=>window.removeEventListener(`scroll`,n)},[]);let a=e=>r[e]?`in`:void 0;return(0,Q.jsxs)(f,{children:[(0,Q.jsx)(p,{ref:e}),(0,Q.jsxs)(m,{"aria-label":`Sections`,children:[(0,Q.jsx)(h,{children:`ROOST`}),$.map(e=>(0,Q.jsx)(g,{href:`#${e.id}`,$active:t===e.id,children:e.kicker.toUpperCase()},e.id)),(0,Q.jsxs)(_,{children:[`RAILS 8.1`,(0,Q.jsx)(`br`,{}),`REACT 19`,(0,Q.jsx)(`br`,{}),`STRIPE + CHECKR`]})]}),(0,Q.jsxs)(v,{children:[(0,Q.jsxs)(b,{children:[(0,Q.jsx)(ee,{children:(0,Q.jsx)(`img`,{src:X,alt:``})}),(0,Q.jsx)(te,{}),(0,Q.jsxs)(x,{children:[(0,Q.jsxs)(C,{children:[(0,Q.jsx)(`b`,{children:`●`}),` Roost Assured \xA0//\xA0 Marketplace`]}),(0,Q.jsxs)(w,{children:[`A marketplace that `,(0,Q.jsx)(`em`,{children:`moves other people’s money`}),`.`]}),(0,Q.jsx)(T,{children:`Owners post a request to have their backyard flock looked after. Background-checked sitters nearby bid on it. When a bid is accepted, the platform charges the owner, pays the sitter, and keeps a cut — which means an ordinary web app suddenly has to be right about money, identity, and what happens when the network lies to it. This walks the two integrations that carry that weight.`})]}),(0,Q.jsx)(S,{children:(0,Q.jsxs)(E,{children:[(0,Q.jsxs)(`div`,{children:[`Stack `,(0,Q.jsx)(`b`,{children:`Rails 8.1 · React 19`})]}),(0,Q.jsxs)(`div`,{children:[`Payments `,(0,Q.jsx)(`b`,{children:`Stripe Connect`})]}),(0,Q.jsxs)(`div`,{children:[`Screening `,(0,Q.jsx)(`b`,{children:`Checkr`})]}),(0,Q.jsxs)(`div`,{children:[`Take rate `,(0,Q.jsx)(`b`,{children:`15%`})]}),(0,Q.jsxs)(`div`,{children:[`Tests `,(0,Q.jsx)(`b`,{children:`104 passing`})]})]})})]}),(0,Q.jsxs)(`main`,{children:[(0,Q.jsx)(D,{id:`marketplace`,className:a(`marketplace`),children:(0,Q.jsxs)(y,{children:[(0,Q.jsxs)(j,{children:[(0,Q.jsx)(O,{children:`The marketplace`}),(0,Q.jsx)(k,{children:`Two sides, and a cut of what passes between them.`}),(0,Q.jsx)(A,{children:`An owner enters a ZIP and says which days they need covered. Every active sitter whose travel radius reaches them sees the request and can bid on it. The owner accepts one. That single click is where the money moves, and it is the only click in the app that can go wrong expensively.`})]}),(0,Q.jsxs)(N,{children:[(0,Q.jsx)(M,{children:(0,Q.jsx)(`img`,{src:X,alt:`The Roost Assured landing page: a ZIP-code search for chicken sitting or coop care, with a background-check promise and a sitter recruitment banner.`,loading:`lazy`})}),(0,Q.jsx)(P,{children:`Landing · the owner side of the market`})]}),(0,Q.jsxs)(F,{children:[(0,Q.jsxs)(I,{$i:0,children:[(0,Q.jsx)(`h3`,{children:`Matching runs on distance, not on a city name`}),(0,Q.jsx)(`p`,{children:`Every sitter carries a travel radius. A SQL bounding box narrows candidates, then an exact Haversine check decides — the box is over-inclusive at its corners, so it never gets the final say.`})]}),(0,Q.jsxs)(I,{$i:1,children:[(0,Q.jsx)(`h3`,{children:`The owner’s address stays private until it has to not be`}),(0,Q.jsx)(`p`,{children:`Sitters browsing requests see a ZIP centroid on a map. Phone number and street address are released only once a bid is accepted, in the serializer, not by convention.`})]}),(0,Q.jsxs)(I,{$i:2,children:[(0,Q.jsx)(`h3`,{children:`Bids go stale on purpose`}),(0,Q.jsx)(`p`,{children:`If the owner edits the substance of a request after a sitter has bid, that bid is flagged stale and can’t be accepted until the sitter resubmits. Nobody gets charged for a job that changed under them.`})]}),(0,Q.jsxs)(I,{$i:3,children:[(0,Q.jsx)(`h3`,{children:`Eligibility is enforced on the write`}),(0,Q.jsx)(`p`,{children:`A sitter can only bid on someone their radius actually reaches. That rule lives in one predicate the index query and the create action both consult — not in the query that happens to render the page.`})]}),(0,Q.jsxs)(I,{$i:4,children:[(0,Q.jsx)(`h3`,{children:`Live job tracking`}),(0,Q.jsx)(`p`,{children:`Once a job starts, the sitter’s checklist, ETA and photos stream to the owner over Action Cable. A job can’t be marked complete until every task is ticked and at least one photo is attached.`})]}),(0,Q.jsxs)(I,{$i:5,children:[(0,Q.jsx)(`h3`,{children:`Blocking is mutual`}),(0,Q.jsx)(`p`,{children:`It doesn’t matter who blocked whom — after that, neither side can bid, message, or match with the other again.`})]})]}),(0,Q.jsxs)(L,{children:[(0,Q.jsx)(N,{children:(0,Q.jsx)(M,{children:(0,Q.jsx)(`img`,{src:Z,alt:`The same landing page rendered in dark mode, warm amber on charcoal.`,loading:`lazy`})})}),(0,Q.jsxs)(`div`,{children:[(0,Q.jsx)(`h3`,{children:`The theme resolves before first paint`}),(0,Q.jsxs)(`p`,{children:[`Dark is the default. The choice is read from localStorage by a small inline script in the document head, which sets a `,(0,Q.jsx)(`code`,{children:`data-theme`}),` attribute before React ever mounts — otherwise a light-mode visitor gets a dark flash on every single page load.`]}),(0,Q.jsxs)(`p`,{children:[`That script is the one exception to a Content Security Policy that is otherwise `,(0,Q.jsx)(`code`,{children:`script-src 'self'`}),` with named third-party origins rather than a blanket `,(0,Q.jsx)(`code`,{children:`https:`}),`. It gets a per-response nonce, so it runs without opening the policy to inline script generally.`]})]})]}),(0,Q.jsxs)(R,{children:[(0,Q.jsxs)(`div`,{children:[(0,Q.jsx)(`b`,{children:`15%`}),(0,Q.jsx)(`span`,{children:`Platform take`})]}),(0,Q.jsxs)(`div`,{children:[(0,Q.jsx)(`b`,{children:`5–50mi`}),(0,Q.jsx)(`span`,{children:`Sitter travel radius`})]}),(0,Q.jsxs)(`div`,{children:[(0,Q.jsx)(`b`,{children:`104`}),(0,Q.jsx)(`span`,{children:`Tests`})]}),(0,Q.jsxs)(`div`,{children:[(0,Q.jsx)(`b`,{children:`0`}),(0,Q.jsx)(`span`,{children:`CI gates failing`})]})]})]})}),(0,Q.jsx)(D,{id:`vetting`,className:a(`vetting`),children:(0,Q.jsxs)(y,{children:[(0,Q.jsxs)(j,{children:[(0,Q.jsx)(O,{children:`Vetting · Checkr`}),(0,Q.jsx)(k,{children:`Never hold the data you don’t want to be responsible for.`}),(0,Q.jsx)(A,{children:`This app sends strangers to people’s homes, so sitters are screened before they can take a job. The screening is real — a Checkr criminal background report — and the $50 application fee exists to pay for it. The design constraint that shaped everything else: Roost Assured never sees an SSN or a date of birth.`})]}),(0,Q.jsxs)(N,{children:[(0,Q.jsx)(M,{children:(0,Q.jsx)(`img`,{src:ne,alt:`The Become a Sitter page, showing the five-step application process: create an account, submit the application, pay the $50 fee, complete the Checkr background check on their hosted portal, then get approved and start bidding.`,loading:`lazy`})}),(0,Q.jsx)(P,{children:`Sitter recruitment · the five-step application, fee and screening spelled out up front`})]}),(0,Q.jsxs)(A,{style:{marginTop:38},children:[`The applicant never types identifying information into this app. Roost Assured creates a `,(0,Q.jsx)(`b`,{children:`candidate`}),` and an `,(0,Q.jsx)(`b`,{children:`invitation`}),` on Checkr, and Checkr emails the applicant a link to its own hosted portal, where consent, SSN and date of birth are collected. What comes back here is a status string.`]}),(0,Q.jsxs)(G,{children:[`app/services/checkr/`,(0,Q.jsx)(`b`,{children:`invitation_service.rb`})]}),(0,Q.jsx)(W,{children:`candidate = client.post("candidates", {
+  email: sitter_application.email_address,
+  first_name: first_name,
+  last_name: last_name,
+  zipcode: sitter_application.zip_code
+})
+
+invitation = client.post("invitations", {
+  candidate_id: candidate["id"],
+  package: CheckrConfig::PACKAGE
+})
+
+sitter_application.update!(
+  checkr_candidate_id: candidate["id"],
+  checkr_invitation_id: invitation["id"],
+  background_check_status: "invited"
+)`}),(0,Q.jsxs)(K,{children:[(0,Q.jsxs)(`li`,{children:[(0,Q.jsx)(`h4`,{children:`Application submitted, fee charged`}),(0,Q.jsx)(`p`,{children:`An on-session Stripe charge for $50, restricted to card payment methods so no redirect-based method can demand a return URL mid-flow. A prior paid-but-unsaved attempt is reused rather than billed twice.`})]}),(0,Q.jsxs)(`li`,{children:[(0,Q.jsx)(`h4`,{children:`Candidate and invitation created`}),(0,Q.jsx)(`p`,{children:`Two calls to Checkr. Failure here is caught and logged rather than raising — the application is already saved and paid for, and losing it because a third party had a bad minute would be the worse outcome.`})]}),(0,Q.jsxs)(`li`,{children:[(0,Q.jsx)(`h4`,{children:`The applicant completes the check on Checkr’s portal`}),(0,Q.jsxs)(`p`,{children:[`Out of this system entirely. Roost Assured holds a `,(0,Q.jsx)(`code`,{children:`candidate_id`}),` and an `,(0,Q.jsx)(`code`,{children:`invitation_id`}),` and nothing else.`]})]}),(0,Q.jsxs)(`li`,{children:[(0,Q.jsx)(`h4`,{children:`Checkr calls back, signed`}),(0,Q.jsx)(`p`,{children:`Every webhook is HMAC-verified before it is believed, and every event id is recorded so a redelivery can’t be processed twice.`})]}),(0,Q.jsxs)(`li`,{className:`pivot`,children:[(0,Q.jsx)(`h4`,{children:`Approval is gated on the result`}),(0,Q.jsxs)(`p`,{children:[`An admin cannot approve an applicant whose report came back `,(0,Q.jsx)(`code`,{children:`consider`}),` or `,(0,Q.jsx)(`code`,{children:`suspended`}),` without an explicit override — and the override is written to the record.`]})]})]}),(0,Q.jsxs)(q,{children:[(0,Q.jsxs)(`div`,{children:[(0,Q.jsxs)(G,{children:[`Webhook `,(0,Q.jsx)(`b`,{children:`verification`})]}),(0,Q.jsx)(W,{children:`digest = OpenSSL::HMAC.hexdigest(
+  "SHA256", CheckrConfig.webhook_key, payload
+)
+return nil unless ActiveSupport::SecurityUtils
+  .secure_compare(digest, signature)`})]}),(0,Q.jsxs)(`div`,{children:[(0,Q.jsxs)(G,{children:[`Approval `,(0,Q.jsx)(`b`,{children:`gate`})]}),(0,Q.jsx)(W,{children:`def approvable?(override: false)
+  background_check_cleared? || override
+end`})]})]}),(0,Q.jsxs)(F,{children:[(0,Q.jsxs)(I,{$i:0,children:[(0,Q.jsx)(`h3`,{children:`The predicates existed before they were wired up`}),(0,Q.jsxs)(`p`,{children:[`An early version defined `,(0,Q.jsx)(`code`,{children:`background_check_cleared?`}),` and never called it — approval didn’t consult the check at all. A flagged applicant could be approved with one click and no warning. That was the single worst defect in the codebase, and it was invisible.`]})]}),(0,Q.jsxs)(I,{$i:1,$tone:`warn`,children:[(0,Q.jsx)(`h3`,{children:`Overrides leave a trace`}),(0,Q.jsx)(`p`,{children:`Approving despite a flagged report is allowed — a dispute can be legitimate — but it sets a boolean on the application. “Who approved a sitter whose check wasn’t clear” has to be answerable later.`})]}),(0,Q.jsxs)(I,{$i:2,children:[(0,Q.jsx)(`h3`,{children:`Statuses are allow-listed`}),(0,Q.jsxs)(`p`,{children:[`The report handler only accepts `,(0,Q.jsx)(`code`,{children:`clear`}),`, `,(0,Q.jsx)(`code`,{children:`consider`}),`, `,(0,Q.jsx)(`code`,{children:`suspended`}),` and `,(0,Q.jsx)(`code`,{children:`dispute`}),`. An unrecognised status is ignored rather than written through into a field the approval gate reads.`]})]}),(0,Q.jsxs)(I,{$i:3,$tone:`hot`,children:[(0,Q.jsx)(`h3`,{children:`What was never built`}),(0,Q.jsx)(`p`,{children:`FCRA requires pre-adverse and adverse-action notices before you reject someone over a background report. This flow requests checks and gates on them but never implemented those notices, which is exactly why it was never pointed at a live applicant.`})]}),(0,Q.jsxs)(I,{$i:4,$tone:`warn`,children:[(0,Q.jsx)(`h3`,{children:`A paid-but-unsaved attempt is reused`}),(0,Q.jsx)(`p`,{children:`The fee is charged before the application is validated. If the save then fails, the next attempt picks up that succeeded charge instead of billing the non-refundable $50 a second time.`})]}),(0,Q.jsxs)(I,{$i:5,children:[(0,Q.jsx)(`h3`,{children:`The whole integration is optional`}),(0,Q.jsxs)(`p`,{children:[`Without an API key configured, `,(0,Q.jsx)(`code`,{children:`CheckrConfig.configured?`}),` is false and the invitation step no-ops. Local development and CI never reach out to a real screening provider.`]})]})]}),(0,Q.jsxs)(L,{children:[(0,Q.jsx)(N,{children:(0,Q.jsx)(M,{children:(0,Q.jsx)(`img`,{src:re,alt:`The Background Check Disclosure legal page, explaining what is screened, who performs it, and the applicant's rights.`,loading:`lazy`})})}),(0,Q.jsxs)(`div`,{children:[(0,Q.jsx)(`h3`,{children:`The disclosure is a page, not a checkbox`}),(0,Q.jsx)(`p`,{children:`Consent to a background check is a legal act with its own requirements, so it gets a real page explaining who performs the screening, what it covers, and what the applicant can do about a result they dispute.`}),(0,Q.jsx)(`p`,{children:`Writing it was also what surfaced the missing adverse-action flow. It is hard to describe someone’s rights on a disclosure page and not notice that the code never honours two of them.`})]})]}),(0,Q.jsxs)(R,{children:[(0,Q.jsxs)(`div`,{children:[(0,Q.jsx)(`b`,{children:`$50`}),(0,Q.jsx)(`span`,{children:`Application fee`})]}),(0,Q.jsxs)(`div`,{children:[(0,Q.jsx)(`b`,{children:`0`}),(0,Q.jsx)(`span`,{children:`SSNs stored`})]}),(0,Q.jsxs)(`div`,{children:[(0,Q.jsx)(`b`,{children:`HMAC`}),(0,Q.jsx)(`span`,{children:`Webhook auth`})]}),(0,Q.jsxs)(`div`,{children:[(0,Q.jsx)(`b`,{children:`4`}),(0,Q.jsx)(`span`,{children:`Accepted statuses`})]})]})]})}),(0,Q.jsx)(D,{id:`money`,className:a(`money`),children:(0,Q.jsxs)(y,{children:[(0,Q.jsxs)(j,{children:[(0,Q.jsx)(O,{children:`Money · Stripe Connect`}),(0,Q.jsx)(k,{children:`The charge does not belong inside the transaction.`}),(0,Q.jsx)(A,{children:`Accepting a bid charges the owner’s stored card, routes the money to the sitter’s Connect account, and keeps 15% as an application fee. The first working version did all of that inside a database transaction that held a row lock. It passed every test. It was also the most dangerous code in the project.`})]}),(0,Q.jsxs)(G,{children:[`The version that `,(0,Q.jsx)(`b`,{children:`looked correct`})]}),(0,Q.jsxs)(W,{children:[`@bid.with_lock do
+  raise if @bid.status != "submitted"
+
+  StripePayments::BidPaymentService.new.charge!(@bid)   `,(0,Q.jsx)(`i`,{children:`# money moves, irreversibly`}),`
+  other_bids.update_all(status: "rejected")
+  @bid.update!(status: "accepted")
+  @bid.seed_job_tasks!                                  `,(0,Q.jsx)(`i`,{children:`# ← anything here can raise`}),`
+end`]}),(0,Q.jsxs)(A,{style:{marginTop:30},children:[(0,Q.jsx)(`b`,{children:`Stripe has no idea your transaction rolled back.`}),` If anything after the charge raises — a validation, a dropped connection, a killed worker — the `,(0,Q.jsx)(`code`,{children:`Payment`}),` row vanishes and the card stays charged. Worse: that row `,(0,Q.jsx)(`i`,{children:`is`}),` the guard against double-charging. Roll it back, let the owner click Accept again, and they pay twice. The bug hides behind the very mechanism meant to prevent it.`]}),(0,Q.jsxs)(K,{children:[(0,Q.jsxs)(`li`,{children:[(0,Q.jsx)(`h4`,{children:`Reserve, under the lock`}),(0,Q.jsxs)(`p`,{children:[`Re-check the guards and write a `,(0,Q.jsx)(`code`,{children:`pending`}),` payment row carrying a freshly generated idempotency key. Local writes only — nothing external is touched.`]})]}),(0,Q.jsxs)(`li`,{className:`pivot`,children:[(0,Q.jsx)(`h4`,{children:`Commit`}),(0,Q.jsx)(`p`,{children:`The transaction closes here. From this moment the reservation is durable, so the already-paid guard is backed by a committed row before a single cent moves.`})]}),(0,Q.jsxs)(`li`,{children:[(0,Q.jsx)(`h4`,{children:`Charge, outside any transaction`}),(0,Q.jsxs)(`p`,{children:[`One `,(0,Q.jsx)(`code`,{children:`PaymentIntent`}),`, confirmed off-session, with a destination transfer and an application fee. Nothing can roll it away, because there is nothing to roll back into.`]})]}),(0,Q.jsxs)(`li`,{children:[(0,Q.jsx)(`h4`,{children:`Promote the bid`}),(0,Q.jsxs)(`p`,{children:[`Only now does the bid become `,(0,Q.jsx)(`code`,{children:`accepted`}),` and the competing bids get rejected. The bid is never in a state the money doesn’t back.`]})]})]}),(0,Q.jsxs)(G,{children:[`app/controllers/api/`,(0,Q.jsx)(`b`,{children:`received_bids_controller.rb`})]}),(0,Q.jsxs)(W,{children:[`@bid.with_lock do
+  rejection = guard_reasons_for(@bid)
+  payment = BidPaymentService.new.reserve!(@bid) if rejection.nil?
+end
+`,(0,Q.jsx)(`i`,{children:`# ── committed ─────────────────────────────────────────────`}),`
+
+BidPaymentService.new.charge!(payment)
+
+@bid.with_lock do
+  other_bids.update_all(status: "rejected")
+  @bid.update!(status: "accepted")
+  @bid.seed_job_tasks!
+end`]}),(0,Q.jsxs)(G,{children:[`app/services/stripe_payments/`,(0,Q.jsx)(`b`,{children:`bid_payment_service.rb`})]}),(0,Q.jsxs)(W,{children:[`intent = ::Stripe::PaymentIntent.create(
+  {
+    amount: (payment.amount * 100).round,
+    currency: "usd",
+    customer: owner.stripe_customer_id,
+    payment_method: owner.default_payment_method_id,
+    confirm: true,
+    off_session: true,
+    application_fee_amount: (payment.application_fee_amount * 100).round,
+    transfer_data: { destination: sitter.stripe_account_id },
+    `,(0,Q.jsx)(`i`,{children:`# lets the webhook find this row even if the response never lands`}),`
+    metadata: { payment_id: payment.id, bid_id: bid.id }
+  },
+  `,(0,Q.jsx)(`i`,{children:`# collapses a retry into the original charge instead of billing twice`}),`
+  idempotency_key: `,(0,Q.jsx)(`b`,{children:`"payment-#{payment.idempotency_key}"`}),`
+)`]}),(0,Q.jsxs)(F,{children:[(0,Q.jsxs)(I,{$i:0,children:[(0,Q.jsx)(`h3`,{children:`Destination charges, not transfers`}),(0,Q.jsxs)(`p`,{children:[`The owner is charged, the sitter’s Express account is the transfer destination, and the platform’s 15% is an `,(0,Q.jsx)(`code`,{children:`application_fee_amount`}),` on the same intent. One object to reason about, one object to refund.`]})]}),(0,Q.jsxs)(I,{$i:1,children:[(0,Q.jsx)(`h3`,{children:`Every Stripe write carries an idempotency key`}),(0,Q.jsx)(`p`,{children:`The bid charge, the $50 application fee, refunds, and Connect account creation. A timeout where the request actually succeeded is the normal case this protects against, not an exotic one.`})]}),(0,Q.jsxs)(I,{$i:2,children:[(0,Q.jsx)(`h3`,{children:`The key is the reservation’s, not the bid’s`}),(0,Q.jsx)(`p`,{children:`Keyed on the bid, a legitimate retry after a declined card would be silently swallowed as a duplicate. Keyed on the reservation, a genuine second attempt gets a genuine second charge.`})]}),(0,Q.jsxs)(I,{$i:3,children:[(0,Q.jsx)(`h3`,{children:`Zero is a legal fee`}),(0,Q.jsx)(`p`,{children:`A sitter on a waived commission produces a $0 application fee. An early validation demanded it be positive — so the charge succeeded at Stripe and then raised on the way to being written down.`})]}),(0,Q.jsxs)(I,{$i:4,children:[(0,Q.jsx)(`h3`,{children:`The card is read from a column`}),(0,Q.jsxs)(`p`,{children:[`“Can this owner be charged?” used to be a live `,(0,Q.jsx)(`code`,{children:`Customer.retrieve`}),`, on the account page and again mid-checkout. It’s now a mirrored column, kept honest by the `,(0,Q.jsx)(`code`,{children:`customer.updated`}),` webhook.`]})]}),(0,Q.jsxs)(I,{$i:5,$tone:`warn`,children:[(0,Q.jsx)(`h3`,{children:`Tested by breaking it on purpose`}),(0,Q.jsx)(`p`,{children:`One test stubs the step after the charge to raise, then asserts the payment row survived. The failure it guards against is silent, and nothing else in the suite would notice it coming back.`})]})]}),(0,Q.jsxs)(R,{children:[(0,Q.jsxs)(`div`,{children:[(0,Q.jsx)(`b`,{children:`3`}),(0,Q.jsx)(`span`,{children:`Phases per accept`})]}),(0,Q.jsxs)(`div`,{children:[(0,Q.jsx)(`b`,{children:`4`}),(0,Q.jsx)(`span`,{children:`Idempotent Stripe writes`})]}),(0,Q.jsxs)(`div`,{children:[(0,Q.jsx)(`b`,{children:`0`}),(0,Q.jsx)(`span`,{children:`Charges inside a transaction`})]}),(0,Q.jsxs)(`div`,{children:[(0,Q.jsx)(`b`,{children:`15%`}),(0,Q.jsx)(`span`,{children:`Application fee`})]})]})]})}),(0,Q.jsx)(D,{id:`reliability`,className:a(`reliability`),children:(0,Q.jsxs)(y,{children:[(0,Q.jsxs)(j,{children:[(0,Q.jsx)(O,{children:`When the wire lies`}),(0,Q.jsx)(k,{children:`A timeout is not a failure. It’s a question.`}),(0,Q.jsx)(A,{children:`Most error handling collapses everything that isn’t success into one bucket. On a payment path that is exactly wrong: a declined card and a connection reset call for opposite responses, and guessing costs real money in one direction or a stuck customer in the other.`})]}),(0,Q.jsxs)(G,{children:[`Two failures, `,(0,Q.jsx)(`b`,{children:`two answers`})]}),(0,Q.jsxs)(W,{children:[`rescue ::Stripe::CardError => e
+  `,(0,Q.jsx)(`i`,{children:`# Definitive: no charge was created. Release the reservation so the`}),`
+  `,(0,Q.jsx)(`i`,{children:`# owner can try a different card.`}),`
+  payment&.update!(status: "failed")
+  render json: { errors: [ e.message ] }, status: :unprocessable_entity
+
+rescue ::Stripe::StripeError => e
+  `,(0,Q.jsx)(`i`,{children:`# Ambiguous — a timeout, a reset. The charge may well have landed.`}),`
+  `,(0,Q.jsx)(`i`,{children:`# Leave it pending: the guard stays armed so a retry can't bill twice,`}),`
+  `,(0,Q.jsx)(`i`,{children:`# and the webhook settles it either way.`}),`
+  render json: { errors: [ "We couldn't confirm that payment." ] },
+         status: :bad_gateway`]}),(0,Q.jsxs)(A,{style:{marginTop:34},children:[`The webhook is what closes the loop — and it has its own race. Stripe frequently delivers `,(0,Q.jsx)(`code`,{children:`payment_intent.succeeded`}),` before the API response carrying the intent id has been written down. Looking the row up by that id alone loses; and because the event was already recorded as processed, the retry is dropped too, stranding the payment in `,(0,Q.jsx)(`code`,{children:`pending`}),` forever.`]}),(0,Q.jsxs)(G,{children:[`Reconciliation by `,(0,Q.jsx)(`b`,{children:`metadata`})]}),(0,Q.jsx)(W,{children:`def find_payment(intent)
+  by_metadata = intent.metadata&.[]("payment_id")
+  (by_metadata && Payment.find_by(id: by_metadata)) ||
+    Payment.find_by(stripe_payment_intent_id: intent.id)
+end`}),(0,Q.jsxs)(F,{children:[(0,Q.jsxs)(I,{$i:0,children:[(0,Q.jsx)(`h3`,{children:`The payment carries its own id into Stripe`}),(0,Q.jsxs)(`p`,{children:[`Stamping `,(0,Q.jsx)(`code`,{children:`payment_id`}),` into the intent’s metadata gives the webhook something stable to match on that exists `,(0,Q.jsx)(`i`,{children:`before`}),` the charge is made, not after it returns.`]})]}),(0,Q.jsxs)(I,{$i:1,children:[(0,Q.jsx)(`h3`,{children:`Replay protection is a unique index`}),(0,Q.jsx)(`p`,{children:`Every Stripe and Checkr event id is inserted into its own table before handling. A duplicate delivery hits the constraint and returns early — not a cache, not a lock, a row.`})]}),(0,Q.jsxs)(I,{$i:2,children:[(0,Q.jsx)(`h3`,{children:`Signatures verified against the raw body`}),(0,Q.jsxs)(`p`,{children:[(0,Q.jsx)(`code`,{children:`request.raw_post`}),`, not `,(0,Q.jsx)(`code`,{children:`request.body.read`}),` — params parsing has already consumed the stream, and the signature covers the original bytes.`]})]}),(0,Q.jsxs)(I,{$i:3,children:[(0,Q.jsx)(`h3`,{children:`A late decline reopens the bid`}),(0,Q.jsx)(`p`,{children:`Off-session charges can fail asynchronously, after the bid was already promoted. When that webhook lands, the bid goes back on the board so the owner can pick another sitter or another card.`})]}),(0,Q.jsxs)(I,{$i:4,$tone:`hot`,children:[(0,Q.jsx)(`h3`,{children:`Rate limits before the expensive work`}),(0,Q.jsx)(`p`,{children:`Rack::Attack throttles by IP at the edge, and the sensitive actions throttle again per user inside the app. Login, signup, password reset, bidding, and messaging each carry their own budget.`})]}),(0,Q.jsxs)(I,{$i:5,children:[(0,Q.jsx)(`h3`,{children:`Outbound HTTP left the request cycle`}),(0,Q.jsxs)(`p`,{children:[`Geocoding once ran in an `,(0,Q.jsx)(`code`,{children:`after_save`}),` with a three-second timeout, on a service running one worker and five threads. Five concurrent ZIP searches could occupy the whole app.`]})]})]}),(0,Q.jsxs)(R,{children:[(0,Q.jsxs)(`div`,{children:[(0,Q.jsx)(`b`,{children:`2`}),(0,Q.jsx)(`span`,{children:`Failure classes`})]}),(0,Q.jsxs)(`div`,{children:[(0,Q.jsx)(`b`,{children:`2`}),(0,Q.jsx)(`span`,{children:`Webhook lookup paths`})]}),(0,Q.jsxs)(`div`,{children:[(0,Q.jsx)(`b`,{children:`6`}),(0,Q.jsx)(`span`,{children:`Rack::Attack throttles`})]}),(0,Q.jsxs)(`div`,{children:[(0,Q.jsx)(`b`,{children:`30d`}),(0,Q.jsx)(`span`,{children:`Geocode cache`})]})]})]})}),(0,Q.jsx)(D,{id:`infrastructure`,className:a(`infrastructure`),children:(0,Q.jsxs)(y,{children:[(0,Q.jsxs)(j,{children:[(0,Q.jsx)(O,{children:`Shipping it`}),(0,Q.jsx)(k,{children:`One database, one image, three processes.`}),(0,Q.jsx)(A,{children:`A marketplace this size does not need a queue server, a cache server, a pub/sub server and a mail service to go with its web server. Rails 8 ships database-backed adapters for the first three, so the whole thing runs on one managed Postgres and a single Docker image, described by one file Render reads on its own.`})]}),(0,Q.jsxs)(G,{children:[`The whole deployment, `,(0,Q.jsx)(`b`,{children:`render.yaml`})]}),(0,Q.jsxs)(W,{children:[`databases:
+  - name: roost-assured-db
+    plan: basic-256mb
+
+services:
+  - type: web
+    name: roost-assured-web
+    runtime: docker
+    healthCheckPath: /up
+    disk:                          `,(0,Q.jsx)(`i`,{children:`# uploads survive a deploy`}),`
+      mountPath: /var/data
+      sizeGB: 1
+
+  - type: worker
+    name: roost-assured-worker
+    runtime: docker                `,(0,Q.jsx)(`i`,{children:`# same image as the web service`}),`
+    dockerCommand: bin/rails solid_queue:start`]}),(0,Q.jsxs)(F,{children:[(0,Q.jsxs)(I,{$i:0,children:[(0,Q.jsx)(`h3`,{children:`Solid Queue, Cache and Cable on the primary database`}),(0,Q.jsx)(`p`,{children:`Rails 8 defaults these onto separate databases. At this scale that meant provisioning three more Postgres instances to hold a job table and a cache table — so they were consolidated back onto the primary in a real migration.`})]}),(0,Q.jsxs)(I,{$i:1,children:[(0,Q.jsx)(`h3`,{children:`The worker is the same image`}),(0,Q.jsxs)(`p`,{children:[`One multi-stage Dockerfile builds gems, runs `,(0,Q.jsx)(`code`,{children:`npm ci`}),`, compiles the Vite bundle, then throws the toolchain away. The web service and the background worker are the same artifact started with different commands.`]})]}),(0,Q.jsxs)(I,{$i:2,children:[(0,Q.jsx)(`h3`,{children:`Assets precompile without secrets`}),(0,Q.jsxs)(`p`,{children:[(0,Q.jsx)(`code`,{children:`SECRET_KEY_BASE_DUMMY=1`}),` lets the image build without `,(0,Q.jsx)(`code`,{children:`RAILS_MASTER_KEY`}),`, so the master key never has to be present at build time — only at boot.`]})]}),(0,Q.jsxs)(I,{$i:3,$tone:`warn`,children:[(0,Q.jsx)(`h3`,{children:`The disk attaches to one service`}),(0,Q.jsx)(`p`,{children:`Active Storage writes to a Render disk, which can only mount on a single service. That caps the web service at one instance and puts attachments out of the worker’s reach — a real constraint, documented rather than discovered later.`})]}),(0,Q.jsxs)(I,{$i:4,children:[(0,Q.jsx)(`h3`,{children:`Housekeeping is a recurring job`}),(0,Q.jsx)(`p`,{children:`Solid Queue’s own scheduler clears finished jobs hourly, in batches with a sleep between them, so table maintenance never becomes a thing someone has to remember.`})]}),(0,Q.jsxs)(I,{$i:5,children:[(0,Q.jsx)(`h3`,{children:`The SPA is served same-origin`}),(0,Q.jsxs)(`p`,{children:[(0,Q.jsx)(`code`,{children:`vite_rails`}),` builds the React app into the Rails asset pipeline and a catch-all route hands every non-API path to the client router. No second host, no CORS in production, and the session cookie stays first-party.`]})]})]}),(0,Q.jsx)(Y,{children:`Mail that renders anywhere`}),(0,Q.jsx)(A,{children:`Five mailers carry the transactional traffic: the waitlist welcome, password resets, the new-request receipt, the nearby-sitter alert, and the sitter-is-on-the-way notice. Delivery goes through Resend’s SMTP relay rather than an API client, which keeps it ordinary Action Mailer — the provider is four lines of configuration and nothing in the app knows its name.`}),(0,Q.jsxs)(q,{children:[(0,Q.jsxs)(`div`,{children:[(0,Q.jsxs)(G,{children:[`Resend, over `,(0,Q.jsx)(`b`,{children:`SMTP`})]}),(0,Q.jsxs)(W,{children:[`config.action_mailer.delivery_method = :smtp
+config.action_mailer.smtp_settings = {
+  address: "smtp.resend.com",
+  port: 587,
+  user_name: "resend",
+  password: resend_api_key,
+  authentication: :plain,
+  enable_starttls_auto: true
+}
+`,(0,Q.jsx)(`i`,{children:`# fail loudly rather than dropping mail silently`}),`
+config.action_mailer.raise_delivery_errors = true`]})]}),(0,Q.jsxs)(`div`,{children:[(0,Q.jsxs)(G,{children:[`Every mail ships `,(0,Q.jsx)(`b`,{children:`both parts`})]}),(0,Q.jsxs)(W,{children:[`app/views/sitting_request_mailer/
+  receipt.html.erb
+  receipt.text.erb
+  new_request_alert.html.erb
+  new_request_alert.text.erb
+
+app/views/application_mailer/
+  _button.html.erb   `,(0,Q.jsx)(`i`,{children:`# table-based CTA`}),``]})]})]}),(0,Q.jsxs)(F,{children:[(0,Q.jsxs)(I,{$i:0,children:[(0,Q.jsx)(`h3`,{children:`HTML and plain text, every time`}),(0,Q.jsx)(`p`,{children:`Multipart isn’t decoration — a text part is what keeps a transactional message out of spam filters and readable in clients that refuse HTML. Every template exists twice.`})]}),(0,Q.jsxs)(I,{$i:1,children:[(0,Q.jsx)(`h3`,{children:`Buttons are tables`}),(0,Q.jsx)(`p`,{children:`A shared partial renders call-to-action buttons the way mail clients still require: nested tables with inline styles, because Outlook does not have a flexbox.`})]}),(0,Q.jsxs)(I,{$i:2,children:[(0,Q.jsx)(`h3`,{children:`Development never sends`}),(0,Q.jsxs)(`p`,{children:[`Outgoing mail is written to `,(0,Q.jsx)(`code`,{children:`tmp/mails`}),` locally, so the whole notification flow can be exercised without an SMTP account or a risk of mailing a real address.`]})]}),(0,Q.jsxs)(I,{$i:3,children:[(0,Q.jsx)(`h3`,{children:`Sending happens in jobs`}),(0,Q.jsxs)(`p`,{children:[`Every mailer is invoked with `,(0,Q.jsx)(`code`,{children:`deliver_later`}),`, so a slow relay can’t hold a request open — and the alert fan-out to nearby sitters is itself a job rather than an after-save callback.`]})]})]}),(0,Q.jsx)(Y,{children:`Notable dependencies`}),(0,Q.jsx)(A,{children:`Sixteen runtime gems, most of them Rails’ own. The ones worth explaining:`}),(0,Q.jsxs)(J,{children:[(0,Q.jsx)(`dt`,{children:`stripe`}),(0,Q.jsxs)(`dd`,{children:[`The official SDK, pinned to v13. `,(0,Q.jsx)(`b`,{children:`Connect Express accounts`}),` for sitters, destination charges with an application fee, and a pinned API version so a Stripe-side upgrade can never change behaviour without a deliberate bump.`]}),(0,Q.jsx)(`dt`,{children:`faraday`}),(0,Q.jsxs)(`dd`,{children:[`Checkr publishes no official Ruby gem, so its client is `,(0,Q.jsx)(`b`,{children:`about twenty lines`}),` of Faraday with basic auth and JSON middleware. A thin wrapper beats an unmaintained third-party SDK for two endpoints.`]}),(0,Q.jsx)(`dt`,{children:`bcrypt`}),(0,Q.jsxs)(`dd`,{children:[`Authentication is `,(0,Q.jsx)(`b`,{children:`Rails’ own`}),` — `,(0,Q.jsx)(`code`,{children:`has_secure_password`}),`, signed cookies, and a Session model with inactivity and absolute timeouts. Devise would have been more code to configure than to write.`]}),(0,Q.jsxs)(`dt`,{children:[`solid_queue`,(0,Q.jsx)(`br`,{}),`solid_cache`,(0,Q.jsx)(`br`,{}),`solid_cable`]}),(0,Q.jsxs)(`dd`,{children:[`Jobs, cache and websockets on Postgres. `,(0,Q.jsx)(`b`,{children:`No Redis`}),`, which at this size is a service to provision, monitor and pay for in exchange for nothing.`]}),(0,Q.jsx)(`dt`,{children:`rack-attack`}),(0,Q.jsxs)(`dd`,{children:[`Edge throttling by IP for login, signup, password reset, the admin surface and the webhook endpoints — `,(0,Q.jsx)(`b`,{children:`before`}),` a request reaches anything expensive.`]}),(0,Q.jsx)(`dt`,{children:`vite_rails`}),(0,Q.jsxs)(`dd`,{children:[`React 19 built by Vite and served by Rails from one origin. Replaces the Sprockets/Webpacker split with `,(0,Q.jsx)(`b`,{children:`one build`}),` that the Docker image runs at precompile time.`]}),(0,Q.jsx)(`dt`,{children:`image_processing`}),(0,Q.jsx)(`dd`,{children:`Active Storage variants for sitter profile photos and the job-completion photos, backed by libvips in the image rather than the heavier ImageMagick.`}),(0,Q.jsx)(`dt`,{children:`thruster`}),(0,Q.jsx)(`dd`,{children:`Sits in front of Puma for HTTP caching, compression and X-Sendfile, so the app can serve its own static assets without a separate proxy tier.`}),(0,Q.jsxs)(`dt`,{children:[`brakeman`,(0,Q.jsx)(`br`,{}),`bundler-audit`]}),(0,Q.jsxs)(`dd`,{children:[`Static analysis and a dependency CVE check, `,(0,Q.jsx)(`b`,{children:`both gating CI`}),` alongside RuboCop, ESLint and the test suite. Five gates, all green.`]})]}),(0,Q.jsxs)(R,{children:[(0,Q.jsxs)(`div`,{children:[(0,Q.jsx)(`b`,{children:`1`}),(0,Q.jsx)(`span`,{children:`Postgres instance`})]}),(0,Q.jsxs)(`div`,{children:[(0,Q.jsx)(`b`,{children:`1`}),(0,Q.jsx)(`span`,{children:`Docker image`})]}),(0,Q.jsxs)(`div`,{children:[(0,Q.jsx)(`b`,{children:`5`}),(0,Q.jsx)(`span`,{children:`Mailers`})]}),(0,Q.jsxs)(`div`,{children:[(0,Q.jsx)(`b`,{children:`0`}),(0,Q.jsx)(`span`,{children:`Redis servers`})]})]})]})}),(0,Q.jsxs)(y,{children:[(0,Q.jsxs)(z,{children:[(0,Q.jsx)(V,{href:ie,target:`_blank`,rel:`noopener noreferrer`,children:`SOURCE ON GITHUB ▸`}),(0,Q.jsx)(V,{href:`mailto:rmccauleycode@gmail.com`,children:`CONTACT ▸`})]}),(0,Q.jsxs)(H,{children:[(0,Q.jsxs)(`span`,{children:[`Roost Assured `,(0,Q.jsx)(`b`,{children:`Rails 8.1 · React 19`})]}),(0,Q.jsxs)(`span`,{children:[`Tests `,(0,Q.jsx)(`b`,{children:`104 passing`})]}),(0,Q.jsx)(U,{children:`Every screen above is a capture of the running application, not a mockup. The sitters shown are fictional seed data — the app never carried real users, and no real background check or payment is represented anywhere on this page.`})]})]})]})]})]})},oe=()=>(0,Q.jsx)(ae,{});export{oe as default};
