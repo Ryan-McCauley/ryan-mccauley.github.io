@@ -1,7 +1,54 @@
 # https://www.robotstxt.org/robotstxt.html
-# Public portfolio — crawlers welcome. The résumé is intentionally not on the
-# site (request-only), so there is nothing sensitive to hide from indexing.
+# Public portfolio — general crawlers welcome everywhere except /resume.
+#
+# /resume is meant for people, not indexes. The page renders entirely in JS
+# (nothing in the static HTML), the full résumé on it is AES-GCM ciphertext, and
+# it is deliberately absent from sitemap.xml. This file is the polite layer of
+# that: honored by the crawlers that honor it, and belt-and-braces for the ones
+# that would otherwise surface the URL in search results.
+
 User-agent: *
+Disallow: /resume
 Allow: /
+
+# Assistants and training crawlers: the résumé is off-limits wholesale. These
+# entries are honor-system — they are respected by the operators below, and do
+# nothing against a scraper that ignores robots.txt. The encryption is what
+# actually protects the content.
+User-agent: GPTBot
+Disallow: /resume
+
+User-agent: OAI-SearchBot
+Disallow: /resume
+
+User-agent: ChatGPT-User
+Disallow: /resume
+
+User-agent: ClaudeBot
+Disallow: /resume
+
+User-agent: Claude-Web
+Disallow: /resume
+
+User-agent: anthropic-ai
+Disallow: /resume
+
+User-agent: PerplexityBot
+Disallow: /resume
+
+User-agent: Google-Extended
+Disallow: /resume
+
+User-agent: Applebot-Extended
+Disallow: /resume
+
+User-agent: Bytespider
+Disallow: /resume
+
+User-agent: CCBot
+Disallow: /resume
+
+User-agent: meta-externalagent
+Disallow: /resume
 
 Sitemap: https://www.ryanmccauley.com/sitemap.xml
