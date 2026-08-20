@@ -1,4 +1,4 @@
-import{i as e,l as t,n,o as r,s as i,u as a}from"./index-DAshIlSm.js";var o=a(t(),1),s={ground:`#05030a`,panel:`#08050f`,elev:`#0b0716`,cyan:`#38e8ff`,holo:`#46f0ff`,violet:`#a878ff`,violetSoft:`#c9b8ff`,dim:`#6a4a8f`,dimmer:`#4a3568`,magenta:`#ff3d9a`,amber:`#ffcc44`,line:`rgba(56, 232, 255, 0.12)`,lineStrong:`rgba(168, 120, 255, 0.25)`,grad:`linear-gradient(100deg, #46f0ff, #a878ff, #ff3d9a, #ffcc44, #46f0ff)`},c=`156px`,l=e`
+import{i as e,l as t,n,o as r,s as i,u as a}from"./index-FTwKruQ4.js";var o=a(t(),1),s={ground:`#05030a`,panel:`#08050f`,elev:`#0b0716`,cyan:`#38e8ff`,holo:`#46f0ff`,violet:`#a878ff`,violetSoft:`#c9b8ff`,dim:`#6a4a8f`,dimmer:`#4a3568`,magenta:`#ff3d9a`,amber:`#ffcc44`,line:`rgba(56, 232, 255, 0.12)`,lineStrong:`rgba(168, 120, 255, 0.25)`,grad:`linear-gradient(100deg, #46f0ff, #a878ff, #ff3d9a, #ffcc44, #46f0ff)`},c=`156px`,l=e`
   0%   { background-position: 0% 50%; }
   100% { background-position: 200% 50%; }
 `,u=e`
@@ -222,6 +222,22 @@ import{i as e,l as t,n,o as r,s as i,u as a}from"./index-DAshIlSm.js";var o=a(t(
   }
   div:last-child { border-right: 0; }
   b { color: ${s.cyan}; font-weight: 400; }
+
+  /* Five cells wrapping in a flex row left right-hand rules dangling mid-row.
+     A single column reads cleanly and stays correct for any cell count — a
+     two-up grid would leave the odd last cell as a phantom half-row. */
+  @media (max-width: 700px) {
+    display: block;
+
+    div {
+      padding: 11px 0;
+      margin-right: 0;
+      border-right: 0;
+      border-bottom: 1px solid ${s.line};
+      font-size: 12px;
+    }
+    div:last-child { border-bottom: 0; }
+  }
 `,D=r.section`
   padding-top: clamp(88px, 12vh, 150px);
 `,O=r.p`
@@ -297,6 +313,18 @@ import{i as e,l as t,n,o as r,s as i,u as a}from"./index-DAshIlSm.js";var o=a(t(
     transform: none;
     .in &:after { animation: none; }
   }
+
+  /* Shrink-to-fit renders a 1200px dashboard capture at ~28% on a phone, where
+     no panel in it is readable. Keep a legible intrinsic width and pan. */
+  @media (max-width: 700px) {
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    &::-webkit-scrollbar { display: none; }
+
+    img { width: 860px; max-width: none; }
+  }
 `,N=r.figure`
   margin: 0;
 `,ne=r.figcaption`
@@ -305,6 +333,14 @@ import{i as e,l as t,n,o as r,s as i,u as a}from"./index-DAshIlSm.js";var o=a(t(
   letter-spacing: 1.5px;
   color: ${s.dimmer};
   text-transform: uppercase;
+
+  /* The capture pans on mobile and the scrollbar is hidden, so say so. */
+  @media (max-width: 700px) {
+    &::before {
+      content: 'Drag to read \\25B8 ';
+      color: ${s.cyan};
+    }
+  }
 `,P=r.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(258px, 1fr));

@@ -1,4 +1,4 @@
-import{i as e,l as t,n,o as r,s as i,u as a}from"./index-DAshIlSm.js";var o=a(t(),1),s={ground:`#17130f`,panel:`#1d1913`,elev:`#241f19`,amber:`#d9a441`,amberHot:`#f59e0b`,amberDeep:`#d97706`,cream:`#f3ede1`,creamSoft:`#b7ab98`,dim:`#8a7c68`,dimmer:`#6b6154`,emerald:`#6ee7b7`,rust:`#f3a5a5`,line:`rgba(217, 164, 65, 0.14)`,lineStrong:`rgba(217, 164, 65, 0.3)`,grad:`linear-gradient(100deg, #d9a441, #f59e0b, #b45309, #d9a441)`},c=`156px`,l=e`
+import{i as e,l as t,n,o as r,s as i,u as a}from"./index-FTwKruQ4.js";var o=a(t(),1),s={ground:`#17130f`,panel:`#1d1913`,elev:`#241f19`,amber:`#d9a441`,amberHot:`#f59e0b`,amberDeep:`#d97706`,cream:`#f3ede1`,creamSoft:`#b7ab98`,dim:`#8a7c68`,dimmer:`#6b6154`,emerald:`#6ee7b7`,rust:`#f3a5a5`,line:`rgba(217, 164, 65, 0.14)`,lineStrong:`rgba(217, 164, 65, 0.3)`,grad:`linear-gradient(100deg, #d9a441, #f59e0b, #b45309, #d9a441)`},c=`156px`,l=e`
   0%   { background-position: 0% 50%; }
   100% { background-position: 200% 50%; }
 `,u=e`
@@ -413,7 +413,10 @@ import{i as e,l as t,n,o as r,s as i,u as a}from"./index-DAshIlSm.js";var o=a(t(
   }
   p:last-child { margin-bottom: 0; }
 
-  @media (max-width: 1020px) { grid-template-columns: 1fr; }
+  /* minmax(0, …) has to survive the stack, not just the two-column case: a
+     grid item defaults to min-width:auto, so without it the captures' 860px
+     pan width sizes the track and the column blows past the viewport. */
+  @media (max-width: 1020px) { grid-template-columns: minmax(0, 1fr); }
 `,R=r.div`
   margin-top: clamp(88px, 12vh, 150px);
   display: grid;
@@ -640,11 +643,11 @@ import{i as e,l as t,n,o as r,s as i,u as a}from"./index-DAshIlSm.js";var o=a(t(
   }
 `,q=r.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 22px;
   margin-top: 34px;
 
-  @media (max-width: 900px) { grid-template-columns: 1fr; }
+  @media (max-width: 900px) { grid-template-columns: minmax(0, 1fr); }
 `,J=r.dl`
   display: grid;
   grid-template-columns: minmax(140px, 200px) 1fr;
