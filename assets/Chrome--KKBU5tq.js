@@ -1,11 +1,11 @@
-import{a as e,c as t,l as n,n as r,o as i}from"./index-XQ38b92w.js";var a=n(t(),1),o=`'Megrim', 'Didot', 'Bodoni MT', Garamond, serif`,s=`'Didot', 'Bodoni MT', 'Hoefler Text', Garamond, 'Times New Roman', serif`,c=`'SFMono-Regular', ui-monospace, Menlo, Consolas, monospace`,l=`-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif`,u=e.header`
+import{l as e,n as t,o as n,s as r,u as i}from"./index-D69ezgs_.js";var a=i(e(),1),o=`'Megrim', 'Didot', 'Bodoni MT', Garamond, serif`,s=`'Didot', 'Bodoni MT', 'Hoefler Text', Garamond, 'Times New Roman', serif`,c=`'SFMono-Regular', ui-monospace, Menlo, Consolas, monospace`,l=`-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif`,u=n.header`
   position: sticky;
   top: 0;
   z-index: 20;
   background: color-mix(in srgb, #150710 82%, transparent);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(201, 168, 106, 0.18);
-`,d=e.div`
+`,d=n.div`
   max-width: 1060px;
   margin: 0 auto;
   padding: 0 26px;
@@ -13,7 +13,7 @@ import{a as e,c as t,l as n,n as r,o as i}from"./index-XQ38b92w.js";var a=n(t(),
   display: flex;
   align-items: center;
   justify-content: space-between;
-`,f=e(i)`
+`,f=n(r)`
   font-family: ${o};
   font-size: 1.6rem;
   letter-spacing: 0.04em;
@@ -34,7 +34,7 @@ import{a as e,c as t,l as n,n as r,o as i}from"./index-XQ38b92w.js";var a=n(t(),
   &:hover b {
     color: #f0e6d8;
   }
-`,p=e.svg`
+`,p=n.svg`
   width: 40px;
   height: 25px;
   flex: none;
@@ -55,7 +55,7 @@ import{a as e,c as t,l as n,n as r,o as i}from"./index-XQ38b92w.js";var a=n(t(),
   ${f}:hover & .glow {
     stroke: #f0e6d8;
   }
-`,m=e.nav`
+`,m=n.nav`
   display: flex;
   align-items: center;
   gap: 24px;
@@ -66,7 +66,7 @@ import{a as e,c as t,l as n,n as r,o as i}from"./index-XQ38b92w.js";var a=n(t(),
     gap: 16px;
     font-size: 13px;
   }
-`,h=e.a`
+`,h=n.a`
   color: #b9a892;
   text-decoration: none;
   transition: color 0.18s;
@@ -80,7 +80,7 @@ import{a as e,c as t,l as n,n as r,o as i}from"./index-XQ38b92w.js";var a=n(t(),
       display: none;
     }
   }
-`,g=e.article`
+`,g=n.article`
   min-height: 100vh;
   background: #150710;
   color: #f0e6d8;
@@ -89,10 +89,10 @@ import{a as e,c as t,l as n,n as r,o as i}from"./index-XQ38b92w.js";var a=n(t(),
   padding: 70px 20px 90px;
   display: flex;
   justify-content: center;
-`,_=e.div`
+`,_=n.div`
   max-width: 760px;
   width: 100%;
-`,v=e.a`
+`,v=n.a`
   display: inline-block;
   font-family: ${c};
   font-size: 0.9rem;
@@ -104,7 +104,7 @@ import{a as e,c as t,l as n,n as r,o as i}from"./index-XQ38b92w.js";var a=n(t(),
   &:hover {
     color: #7ff0be;
   }
-`,y=e.img`
+`,y=n.img`
   width: 100%;
   max-height: 320px;
   object-fit: cover;
@@ -112,7 +112,7 @@ import{a as e,c as t,l as n,n as r,o as i}from"./index-XQ38b92w.js";var a=n(t(),
   border: 1px solid rgba(201, 168, 106, 0.18);
   margin-bottom: 34px;
   box-shadow: 0 20px 44px -26px #000;
-`,b=e.h1`
+`,b=n.h1`
   font-family: ${o};
   font-weight: 400;
   font-size: clamp(38px, 6vw, 64px);
@@ -120,7 +120,7 @@ import{a as e,c as t,l as n,n as r,o as i}from"./index-XQ38b92w.js";var a=n(t(),
   letter-spacing: 0.005em;
   color: #f0e6d8;
   margin: 0 0 18px;
-`,x=e.p`
+`,x=n.p`
   font-size: 1.2rem;
   line-height: 1.6;
   color: #b9a892;
@@ -129,7 +129,7 @@ import{a as e,c as t,l as n,n as r,o as i}from"./index-XQ38b92w.js";var a=n(t(),
   @media screen and (max-width: 480px) {
     font-size: 1.08rem;
   }
-`,S=e.div`
+`,S=n.div`
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -140,11 +140,11 @@ import{a as e,c as t,l as n,n as r,o as i}from"./index-XQ38b92w.js";var a=n(t(),
   padding-bottom: 26px;
   margin-bottom: 42px;
   border-bottom: 1px solid rgba(201, 168, 106, 0.18);
-`,C=e.div`
+`,C=n.div`
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-`,w=e.span`
+`,w=n.span`
   font-family: ${c};
   font-size: 0.72rem;
   color: #b9a892;
@@ -152,7 +152,7 @@ import{a as e,c as t,l as n,n as r,o as i}from"./index-XQ38b92w.js";var a=n(t(),
   border: 1px solid rgba(201, 168, 106, 0.32);
   border-radius: 5px;
   padding: 4px 10px;
-`,T=e.p`
+`,T=n.p`
   font-size: 1.12rem;
   line-height: 1.78;
   color: #ddd0bd;
@@ -167,14 +167,14 @@ import{a as e,c as t,l as n,n as r,o as i}from"./index-XQ38b92w.js";var a=n(t(),
     padding: 1px 6px;
     border-radius: 5px;
   }
-`,E=e.h2`
+`,E=n.h2`
   font-family: ${s};
   font-weight: 400;
   font-size: 1.7rem;
   letter-spacing: 0.01em;
   color: #f0e6d8;
   margin: 44px 0 16px;
-`,D=e.blockquote`
+`,D=n.blockquote`
   margin: 34px 0;
   padding: 6px 0 6px 24px;
   border-left: 2px solid #7ff0be;
@@ -183,7 +183,7 @@ import{a as e,c as t,l as n,n as r,o as i}from"./index-XQ38b92w.js";var a=n(t(),
   line-height: 1.5;
   font-style: italic;
   color: #f0e6d8;
-`,O=e.ul`
+`,O=n.ul`
   margin: 0 0 24px;
   padding-left: 22px;
   list-style: none;
@@ -207,7 +207,7 @@ import{a as e,c as t,l as n,n as r,o as i}from"./index-XQ38b92w.js";var a=n(t(),
     background: #c9a86a;
     transform: rotate(45deg);
   }
-`,k=e.pre`
+`,k=n.pre`
   background: #100610;
   border: 1px solid rgba(201, 168, 106, 0.18);
   border-radius: 10px;
@@ -222,10 +222,10 @@ import{a as e,c as t,l as n,n as r,o as i}from"./index-XQ38b92w.js";var a=n(t(),
     color: #d8cbb8;
     white-space: pre;
   }
-`,A=e.footer`
+`,A=n.footer`
   border-top: 1px solid rgba(201, 168, 106, 0.18);
   background: #1e0a16;
-`,j=e.div`
+`,j=n.div`
   max-width: 1060px;
   margin: 0 auto;
   padding: 40px 26px;
@@ -234,7 +234,7 @@ import{a as e,c as t,l as n,n as r,o as i}from"./index-XQ38b92w.js";var a=n(t(),
   align-items: center;
   gap: 18px;
   text-align: center;
-`,M=e.div`
+`,M=n.div`
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
@@ -250,11 +250,11 @@ import{a as e,c as t,l as n,n as r,o as i}from"./index-XQ38b92w.js";var a=n(t(),
   a:hover {
     color: #7ff0be;
   }
-`,N=e.span`
+`,N=n.span`
   font-family: ${c};
   font-size: 12px;
   color: #8a7867;
-`,P=e.div`
+`,P=n.div`
   min-height: 100vh;
   background: #150710;
   color: #f0e6d8;
@@ -271,4 +271,4 @@ import{a as e,c as t,l as n,n as r,o as i}from"./index-XQ38b92w.js";var a=n(t(),
     font-family: ${o};
     font-weight: 400;
   }
-`,F=r(),I=()=>(0,F.jsx)(u,{children:(0,F.jsxs)(d,{children:[(0,F.jsxs)(f,{to:`/`,"aria-label":`Ryan McCauley — home`,children:[(0,F.jsx)(`span`,{children:`::`}),(0,F.jsx)(p,{viewBox:`-6 -14 162 98`,"aria-hidden":`true`,children:(0,F.jsxs)(`g`,{transform:`rotate(-22 75 40)`,children:[(0,F.jsx)(`ellipse`,{className:`glow`,cx:`75`,cy:`40`,rx:`60`,ry:`14`}),(0,F.jsx)(`path`,{className:`glow`,d:`M31 38 q44 -31 88 0`}),(0,F.jsx)(`ellipse`,{className:`dome2`,cx:`75`,cy:`32`,rx:`22`,ry:`7`})]})}),(0,F.jsx)(`span`,{children:`::`})]}),(0,F.jsxs)(m,{children:[(0,F.jsx)(h,{href:`/#work`,children:`Projects`}),(0,F.jsx)(h,{className:`hidem`,href:`/#writing`,children:`Writing`}),(0,F.jsx)(h,{href:`/#contact`,children:`Contact`})]})]})}),L=()=>(0,F.jsx)(A,{children:(0,F.jsxs)(j,{children:[(0,F.jsxs)(M,{children:[(0,F.jsx)(`a`,{href:`/`,children:`Home`}),(0,F.jsx)(`a`,{href:`/#work`,children:`Projects`}),(0,F.jsx)(`a`,{href:`/#writing`,children:`Writing`}),(0,F.jsx)(`a`,{href:`/#contact`,children:`Contact`}),(0,F.jsx)(`a`,{href:`https://github.com/Ryan-McCauley`,target:`_blank`,rel:`noreferrer`,children:`GitHub`})]}),(0,F.jsxs)(N,{children:[`© Ryan McCauley `,new Date().getFullYear()]})]})}),R=()=>{(0,a.useEffect)(()=>{let e=document.head.querySelector(`meta[name="robots"]`);if(!e)return;let t=e.getAttribute(`content`);return e.setAttribute(`content`,`noindex`),()=>e.setAttribute(`content`,t)},[])};export{w as _,O as a,T as c,_ as d,S as f,E as g,D as h,v as i,g as l,b as m,I as n,k as o,x as p,R as r,P as s,L as t,y as u,C as v};
+`,F=t(),I=()=>(0,F.jsx)(u,{children:(0,F.jsxs)(d,{children:[(0,F.jsxs)(f,{to:`/`,"aria-label":`Ryan McCauley — home`,children:[(0,F.jsx)(`span`,{children:`::`}),(0,F.jsx)(p,{viewBox:`-6 -14 162 98`,"aria-hidden":`true`,children:(0,F.jsxs)(`g`,{transform:`rotate(-22 75 40)`,children:[(0,F.jsx)(`ellipse`,{className:`glow`,cx:`75`,cy:`40`,rx:`60`,ry:`14`}),(0,F.jsx)(`path`,{className:`glow`,d:`M31 38 q44 -31 88 0`}),(0,F.jsx)(`ellipse`,{className:`dome2`,cx:`75`,cy:`32`,rx:`22`,ry:`7`})]})}),(0,F.jsx)(`span`,{children:`::`})]}),(0,F.jsxs)(m,{children:[(0,F.jsx)(h,{href:`/#work`,children:`Projects`}),(0,F.jsx)(h,{className:`hidem`,href:`/#writing`,children:`Writing`}),(0,F.jsx)(h,{href:`/#contact`,children:`Contact`})]})]})}),L=()=>(0,F.jsx)(A,{children:(0,F.jsxs)(j,{children:[(0,F.jsxs)(M,{children:[(0,F.jsx)(`a`,{href:`/`,children:`Home`}),(0,F.jsx)(`a`,{href:`/#work`,children:`Projects`}),(0,F.jsx)(`a`,{href:`/#writing`,children:`Writing`}),(0,F.jsx)(`a`,{href:`/#contact`,children:`Contact`}),(0,F.jsx)(`a`,{href:`https://github.com/Ryan-McCauley`,target:`_blank`,rel:`noreferrer`,children:`GitHub`})]}),(0,F.jsxs)(N,{children:[`© Ryan McCauley `,new Date().getFullYear()]})]})}),R=()=>{(0,a.useEffect)(()=>{let e=document.head.querySelector(`meta[name="robots"]`);if(!e)return;let t=e.getAttribute(`content`);return e.setAttribute(`content`,`noindex`),()=>e.setAttribute(`content`,t)},[])};export{w as _,O as a,T as c,_ as d,S as f,E as g,D as h,v as i,g as l,b as m,I as n,k as o,x as p,R as r,P as s,L as t,y as u,C as v};

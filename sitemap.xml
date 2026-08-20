@@ -13,6 +13,18 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.ryanmccauley.com/homunculus/docs/</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.ryanmccauley.com/blog/keeping-track-of-the-models</loc>
+    <lastmod>2026-08-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.ryanmccauley.com/blog/building-homunculus</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>yearly</changefreq>
