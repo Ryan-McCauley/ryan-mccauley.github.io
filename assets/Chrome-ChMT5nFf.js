@@ -1,4 +1,4 @@
-import{l as e,n as t,o as n,s as r,u as i}from"./index-BTlxuHtH.js";var a=i(e(),1),o=`'Megrim', 'Didot', 'Bodoni MT', Garamond, serif`,s=`'Didot', 'Bodoni MT', 'Hoefler Text', Garamond, 'Times New Roman', serif`,c=`'SFMono-Regular', ui-monospace, Menlo, Consolas, monospace`,l=`-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif`,u=n.header`
+import{l as e,n as t,o as n,s as r,u as i}from"./index-OJXHSIcb.js";var a=i(e(),1),o=`'Megrim', 'Didot', 'Bodoni MT', Garamond, serif`,s=`'Didot', 'Bodoni MT', 'Hoefler Text', Garamond, 'Times New Roman', serif`,c=`'SFMono-Regular', ui-monospace, Menlo, Consolas, monospace`,l=`-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif`,u=n.header`
   position: sticky;
   top: 0;
   z-index: 20;
@@ -222,10 +222,34 @@ import{l as e,n as t,o as n,s as r,u as i}from"./index-BTlxuHtH.js";var a=i(e(),
     color: #d8cbb8;
     white-space: pre;
   }
-`,A=n.footer`
+`,A=n.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: ${c};
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #c9a86a;
+  background: #22101d;
+  border: 1px solid rgba(201, 168, 106, 0.32);
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin: 0 0 24px;
+
+  &:before {
+    content: '';
+    flex: none;
+    width: 7px;
+    height: 7px;
+    border-radius: 1px;
+    background: #7ff0be;
+    transform: rotate(45deg);
+  }
+`,j=n.footer`
   border-top: 1px solid rgba(201, 168, 106, 0.18);
   background: #1e0a16;
-`,j=n.div`
+`,M=n.div`
   max-width: 1060px;
   margin: 0 auto;
   padding: 40px 26px;
@@ -234,7 +258,7 @@ import{l as e,n as t,o as n,s as r,u as i}from"./index-BTlxuHtH.js";var a=i(e(),
   align-items: center;
   gap: 18px;
   text-align: center;
-`,M=n.div`
+`,N=n.div`
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
@@ -250,11 +274,11 @@ import{l as e,n as t,o as n,s as r,u as i}from"./index-BTlxuHtH.js";var a=i(e(),
   a:hover {
     color: #7ff0be;
   }
-`,N=n.span`
+`,P=n.span`
   font-family: ${c};
   font-size: 12px;
   color: #8a7867;
-`,P=n.div`
+`,F=n.div`
   min-height: 100vh;
   background: #150710;
   color: #f0e6d8;
@@ -271,4 +295,4 @@ import{l as e,n as t,o as n,s as r,u as i}from"./index-BTlxuHtH.js";var a=i(e(),
     font-family: ${o};
     font-weight: 400;
   }
-`,F=t(),I=()=>(0,F.jsx)(u,{children:(0,F.jsxs)(d,{children:[(0,F.jsxs)(f,{to:`/`,"aria-label":`Ryan McCauley — home`,children:[(0,F.jsx)(`span`,{children:`::`}),(0,F.jsx)(p,{viewBox:`-6 -14 162 98`,"aria-hidden":`true`,children:(0,F.jsxs)(`g`,{transform:`rotate(-22 75 40)`,children:[(0,F.jsx)(`ellipse`,{className:`glow`,cx:`75`,cy:`40`,rx:`60`,ry:`14`}),(0,F.jsx)(`path`,{className:`glow`,d:`M31 38 q44 -31 88 0`}),(0,F.jsx)(`ellipse`,{className:`dome2`,cx:`75`,cy:`32`,rx:`22`,ry:`7`})]})}),(0,F.jsx)(`span`,{children:`::`})]}),(0,F.jsxs)(m,{children:[(0,F.jsx)(h,{href:`/#work`,children:`Projects`}),(0,F.jsx)(h,{className:`hidem`,href:`/#writing`,children:`Writing`}),(0,F.jsx)(h,{href:`/#contact`,children:`Contact`})]})]})}),L=()=>(0,F.jsx)(A,{children:(0,F.jsxs)(j,{children:[(0,F.jsxs)(M,{children:[(0,F.jsx)(`a`,{href:`/`,children:`Home`}),(0,F.jsx)(`a`,{href:`/#work`,children:`Projects`}),(0,F.jsx)(`a`,{href:`/#writing`,children:`Writing`}),(0,F.jsx)(`a`,{href:`/#contact`,children:`Contact`}),(0,F.jsx)(`a`,{href:`https://github.com/Ryan-McCauley`,target:`_blank`,rel:`noreferrer`,children:`GitHub`})]}),(0,F.jsxs)(N,{children:[`© Ryan McCauley `,new Date().getFullYear()]})]})}),R=()=>{(0,a.useEffect)(()=>{let e=document.head.querySelector(`meta[name="robots"]`);if(!e)return;let t=e.getAttribute(`content`);return e.setAttribute(`content`,`noindex`),()=>e.setAttribute(`content`,t)},[])};export{w as _,O as a,T as c,_ as d,S as f,E as g,D as h,v as i,g as l,b as m,I as n,k as o,x as p,R as r,P as s,L as t,y as u,C as v};
+`,I=t(),L=()=>(0,I.jsx)(u,{children:(0,I.jsxs)(d,{children:[(0,I.jsxs)(f,{to:`/`,"aria-label":`Ryan McCauley — home`,children:[(0,I.jsx)(`span`,{children:`::`}),(0,I.jsx)(p,{viewBox:`-6 -14 162 98`,"aria-hidden":`true`,children:(0,I.jsxs)(`g`,{transform:`rotate(-22 75 40)`,children:[(0,I.jsx)(`ellipse`,{className:`glow`,cx:`75`,cy:`40`,rx:`60`,ry:`14`}),(0,I.jsx)(`path`,{className:`glow`,d:`M31 38 q44 -31 88 0`}),(0,I.jsx)(`ellipse`,{className:`dome2`,cx:`75`,cy:`32`,rx:`22`,ry:`7`})]})}),(0,I.jsx)(`span`,{children:`::`})]}),(0,I.jsxs)(m,{children:[(0,I.jsx)(h,{href:`/#work`,children:`Projects`}),(0,I.jsx)(h,{className:`hidem`,href:`/#writing`,children:`Writing`}),(0,I.jsx)(h,{href:`/#contact`,children:`Contact`})]})]})}),R=()=>(0,I.jsx)(j,{children:(0,I.jsxs)(M,{children:[(0,I.jsxs)(N,{children:[(0,I.jsx)(`a`,{href:`/`,children:`Home`}),(0,I.jsx)(`a`,{href:`/#work`,children:`Projects`}),(0,I.jsx)(`a`,{href:`/#writing`,children:`Writing`}),(0,I.jsx)(`a`,{href:`/#contact`,children:`Contact`}),(0,I.jsx)(`a`,{href:`https://github.com/Ryan-McCauley`,target:`_blank`,rel:`noreferrer`,children:`GitHub`})]}),(0,I.jsxs)(P,{children:[`© Ryan McCauley `,new Date().getFullYear()]})]})}),z=()=>{(0,a.useEffect)(()=>{let e=document.head.querySelector(`meta[name="robots"]`);if(!e)return;let t=e.getAttribute(`content`);return e.setAttribute(`content`,`noindex`),()=>e.setAttribute(`content`,t)},[])};export{E as _,O as a,T as c,y as d,_ as f,D as g,b as h,v as i,A as l,x as m,L as n,k as o,S as p,z as r,F as s,R as t,g as u,w as v,C as y};
